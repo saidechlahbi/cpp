@@ -16,7 +16,7 @@ class Contact {
                 string Darkestsecret);
         /*seters*/
         void    setFirstName(string FirstName);
-        void    setLastName(string LastName)
+        void    setLastName(string LastName);
         void    setNickName(string NickName);
         void    setPhoneNumber(string PhoneNumber);
         void    setDarkestsecret(string Darkestsecret);
@@ -28,24 +28,38 @@ class Contact {
         string  getDarkestsecret();
     
 
-}
-class PhoneBook
-{
-    public:
+};
+// class PhoneBook
+// {
+//     public:
     
 
-    public: PhoneBook(int a, int b){
-            this->a = a;
-            this->b = b;
-        }
-    int geta()
-    {
-        return a;
-    }
-};
+//     public: PhoneBook(int a, int b){
+//             this->a = a;
+//             this->b = b;
+//         }
+//     int geta()
+//     {
+//         return a;
+//     }
+// };
 
 int  main()
 {
-    cout << "__welcome to My the awesome phonebook__" << endl;
-    
+    // cout << "__welcome to My the awesome phonebook__" << endl;
+    string a = "aaaaaaaaaaa";
+    string b = "bbbbbbbbbbbbbb";
+    string c = "cccccccccccccccc";
+    string d = "ddddddddddddddd";
+    string& ref = a;  // ref is another name for name
+    ref = b; 
+    ref = c; 
+    ref = d; 
+
+    cout << a<< endl; 
+    cout <<  b  << endl;
+     cout <<  c  << endl;
+    cout <<  d  << endl;
+
+
 }
