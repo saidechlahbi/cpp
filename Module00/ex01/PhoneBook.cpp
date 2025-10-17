@@ -1,65 +1,41 @@
-#include <iostream>
-#include <string>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/17 11:17:51 by sechlahb          #+#    #+#             */
+/*   Updated: 2025/10/17 12:00:02 by sechlahb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-using namespace std;
+#include "phonebook.hpp"
 
-class Contact {
-    private:
-        string FirstName;
-        string LastName;
-        string NickName;
-        string PhoneNumber;
-        string DarkestSecret;
-    public:
-        /*constructor*/
-        Contact(string FirstName, string LastName, string NickName, string PhoneNumber, 
-                string Darkestsecret);
-        /*seters*/
-        void    setFirstName(string FirstName);
-        void    setLastName(string LastName);
-        void    setNickName(string NickName);
-        void    setPhoneNumber(string PhoneNumber);
-        void    setDarkestsecret(string Darkestsecret);
-        /*geters*/
-        string  getFirstName();
-        string  getLastName();
-        string  getNickName();
-        string  getPhoneNumber();
-        string  getDarkestsecret();
-    
+PhoneBook::PhoneBook(): ContactCount(0), OldIndex(0) {}
 
-};
-// class PhoneBook
-// {
-//     public:
-    
-
-//     public: PhoneBook(int a, int b){
-//             this->a = a;
-//             this->b = b;
-//         }
-//     int geta()
-//     {
-//         return a;
-//     }
-// };
-
-int  main()
+void PhoneBook::AddContact(const Contact& contact)
 {
-    // cout << "__welcome to My the awesome phonebook__" << endl;
-    string a = "aaaaaaaaaaa";
-    string b = "bbbbbbbbbbbbbb";
-    string c = "cccccccccccccccc";
-    string d = "ddddddddddddddd";
-    string& ref = a;  // ref is another name for name
-    ref = b; 
-    ref = c; 
-    ref = d; 
-
-    cout << a<< endl; 
-    cout <<  b  << endl;
-     cout <<  c  << endl;
-    cout <<  d  << endl;
-
-
+    if (ContactCount < 8)
+    {
+        Contacts[ContactCount] = contact;
+        ContactCount++;
+    }
+    else
+    {
+        Contacts[OldIndex] = contact;
+        OldIndex = (OldIndex + 1) % 8;
+    }
+}
+void PhoneBook::DisplayContacts() const
+{
+    
+}
+void PhoneBook::DisplayContactsDetails(int index)
+{
+    
+}
+int PhoneBook::GetContactCount() const
+{
+        
 }
