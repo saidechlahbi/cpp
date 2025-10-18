@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 10:45:29 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/10/17 11:17:01 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/10/18 15:02:33 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ class Contact {
         string  getNickName() const;
         string  getPhoneNumber() const;
         string  getDarkestsecret() const;
+        
+        bool isEmpty() const;
 };
 
 #endif  /*CONTACT_HPP*/

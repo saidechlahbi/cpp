@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:17:41 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/10/17 11:56:59 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/10/18 14:40:45 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include "contact.hpp"
+#include "Contact.hpp"
 
 class PhoneBook{
     private:
@@ -27,7 +27,7 @@ class PhoneBook{
         void DisplayContacts() const;
         void DisplayContactsDetails(int index) const;
         int GetContactCount() const;
-}
+};
 
 #endif /*PHONEBOOK_HPP*/
 

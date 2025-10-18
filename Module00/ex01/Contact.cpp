@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 10:45:15 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/10/17 11:16:39 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/10/18 15:33:57 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
+#include "Contact.hpp"
 
 Contact::Contact(): FirstName(""), LastName(""), NickName(""), PhoneNumber(""),
                     DarkestSecret("") {}
@@ -57,4 +57,10 @@ string  Contact::getPhoneNumber() const
 string  Contact::getDarkestsecret() const
 {
     return DarkestSecret;
+}
+
+bool Contact::isEmpty() const
+{
+    return FirstName.empty() || LastName.empty() || NickName.empty()
+        || PhoneNumber.empty() || DarkestSecret.empty();
 }
