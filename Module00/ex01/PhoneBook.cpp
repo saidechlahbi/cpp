@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:17:51 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/10/18 17:32:31 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/10/18 22:48:49 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void PhoneBook::DisplayContacts() const
         << setw(10) <<"First Name" << "|"
         << setw(10) << "Last Name" << "|"
         << setw(10) << "Nickname" << endl;
-    for (int i; i < ContactCount; i++)
+    for (int i = 0; i < ContactCount; i++)
     {
         cout << setw(10) << i << "|"
         << setw(10) << TruncateField(Contacts[i].getFirstName()) << "|"
@@ -52,11 +52,11 @@ void PhoneBook::DisplayContacts() const
 }
 void PhoneBook::DisplayContactsDetails(const int index) const
 {
-    cout << Contacts[index].getFirstName() << endl;
-    cout << Contacts[index].getLastName() << endl;
-    cout << Contacts[index].getNickName() << endl;
-    cout << Contacts[index].getPhoneNumber() << endl;
-    cout << Contacts[index].getDarkestsecret() << endl;
+    cout << setw(10) << Contacts[index].getFirstName() << "|"
+    << setw(10) <<  Contacts[index].getLastName() << "|"
+    << setw(10) <<  Contacts[index].getNickName() << "|"
+    << setw(10) <<  Contacts[index].getPhoneNumber() << "|"
+    << setw(10) <<  Contacts[index].getDarkestsecret() << endl;
 }
 int PhoneBook::GetContactCount() const
 {

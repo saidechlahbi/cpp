@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:17:15 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/10/18 17:39:57 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/10/18 21:51:52 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int main()
             string index_s;
             getline(cin, index_s);
             int index = atoi(index_s.c_str());
-            for (int i; i < index_s.length(); i++)
+            for (string::size_type i = 0; i < index_s.length(); i++)
             {
                 if (!isdigit(index_s[i]) || index > 10 || index < 0)
                 {
@@ -87,7 +87,7 @@ int main()
         }
         else if (command == "EXIT")
         {
-            cout << "Goodbay!" << endl;
+            cout << "Goodbye!" << endl;
             break;
         }
         else

@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 10:45:15 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/10/18 15:33:57 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/10/18 21:49:01 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void Contact::setPhoneNumber(string PhoneNumber)
 }
 void Contact::setDarkestsecret(string Darkestsecret)
 {
-    this->DarkestSecret = DarkestSecret;
+    this->DarkestSecret = Darkestsecret;
 }
 
 /*geters*/
