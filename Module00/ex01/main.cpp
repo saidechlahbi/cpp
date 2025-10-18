@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:17:15 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/10/18 15:34:40 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/10/18 17:39:57 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ Contact CreateContact()
 int main()
 {
     string command;
+    PhoneBook new_phonebook;
     cout << "<------ Welcom to my awesome phonebook ------>" << endl;
     cout << "Availabe commands: ADD, SEARCH, EXIT" << endl;
     while (true)
@@ -56,7 +57,41 @@ int main()
             cout  <<  new_contact.isEmpty() << endl;
             if (new_contact.isEmpty())
                 cout << "Error: All the fields must br filled! contact not saved" << endl;
-            return 0;
+            else
+            {
+                new_phonebook.AddContact(new_contact);
+                cout <<  "Contact added successfully!" << endl;
+            }
         }
+        else if (command == "SEARCH")
+        {
+            if (new_phonebook.GetContactCount() == 0)
+            {
+                cout << "Phonebook is empty!" << endl;
+                continue;
+            }
+            new_phonebook.DisplayContacts();
+            cout << "Enter the contact index: ";
+            string index_s;
+            getline(cin, index_s);
+            int index = atoi(index_s.c_str());
+            for (int i; i < index_s.length(); i++)
+            {
+                if (!isdigit(index_s[i]) || index > 10 || index < 0)
+                {
+                    cout << "Invalid input: please enter a valid number!" << endl;  
+                    continue;   
+                }
+            }
+            new_phonebook.DisplayContactsDetails(index);
+        }
+        else if (command == "EXIT")
+        {
+            cout << "Goodbay!" << endl;
+            break;
+        }
+        else
+            cout << "Invalid command! Use ADD, SEARCH or EXIT" << endl;
     }
+    return 0;
 }
