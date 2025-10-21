@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 01:28:51 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/10/21 17:08:36 by sechlahb         ###   ########.fr       */
+/*   Created: 2025/10/21 17:18:11 by sechlahb          #+#    #+#             */
+/*   Updated: 2025/10/21 17:55:23 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,16 @@
 #include <string>
 #include <iostream>
 
-
 class Zombie
 {
     private:
         std::string name;
     public:
-        Zombie(std::string name);
+        Zombie();
+        void setName(std::string name);
         ~Zombie();
         void announce( void );
         
 };
-
 
 #endif /*ZOMBIE_HPP*/
