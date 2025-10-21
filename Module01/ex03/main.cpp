@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:48:53 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/10/21 20:30:30 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/10/21 20:50:44 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 std::string getType();
 void setType(std::string type);
 
-void setWeapon(Weapon weapon);
+void setWeapon(Weapon& weapon);
 void attack();
 
 void attack();
