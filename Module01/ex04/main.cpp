@@ -6,7 +6,18 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 23:39:38 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/10/24 23:39:39 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/10/25 23:04:53 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+
+int main (int ac, char **av)
+{
+    string line;
+    
+    if (ac == 3)
+    {
+            
+    }
+}
