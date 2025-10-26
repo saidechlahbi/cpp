@@ -42,17 +42,20 @@ int main (int ac, char **av)
             return 1;
         }
         std::fstream inputfile; 
-        std::fstream outputfile;
+        std::fstream outputfile ;
+        std::string filename = av[1];
+        std::string filereplace = av[1];
+        filereplace = filereplace + ".replace";
         std::string line;
-
-        inputfile.open(av[1], std::ios::in);
+        
+        inputfile.open(filename, std::ios::in);
         if (!inputfile)
         {
             std::cerr << "Error: could not open the inputfile." << std::endl;
             return 1;
         }
 
-        outputfile.open("./sed.replace", std::ios::out);
+        outputfile.open(filereplace, std::ios::out);
         if (!outputfile)
         {
             std::cerr << "Error: could not open the outputfile." << std::endl;
