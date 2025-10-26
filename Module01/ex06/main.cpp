@@ -10,3 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Harl.hpp"
+
+int main(int ac, char **av)
+{
+    if (ac != 2)
+    {
+        std::cerr << "Error : the number of arguments is wrong!" << std::endl;
+        return 1;
+    }
+    
+    Harl boo;
+    boo.complain(av[1]);
+    return 0;
+}
