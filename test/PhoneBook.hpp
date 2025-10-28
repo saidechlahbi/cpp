@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:17:41 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/10/28 23:06:17 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/10/28 23:18:11 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class PhoneBook{
         Contact Contacts[8];
         int ContactCount;
         int OldIndex;
-        string TruncateField(string& field) ;
+        string TruncateField(string field) ;
         
     public:
         PhoneBook();

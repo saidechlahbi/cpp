@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:17:51 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/10/28 23:08:09 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/10/28 23:18:08 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 PhoneBook::PhoneBook(): ContactCount(0), OldIndex(0) {}
 
-string PhoneBook::TruncateField(string& field) 
+string PhoneBook::TruncateField(string field) 
 {
     if (field.length() > 10)
         return field.substr(0,9) + ".";

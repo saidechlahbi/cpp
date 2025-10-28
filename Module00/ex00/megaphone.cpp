@@ -1,8 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/28 21:33:27 by sechlahb          #+#    #+#             */
+/*   Updated: 2025/10/28 22:09:48 by sechlahb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 
 int main(int ac, char **av)
 {
-    int i, j;
+    int j;
+    std::string argv;
 
     if (ac == 1)
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
@@ -11,20 +24,11 @@ int main(int ac, char **av)
         j = 1;
         while (j < ac)
         {
-            i = 0;
-            while (av[j][i])
-            {
-                if (av[j][i] >= 'a' && av[j][i] <= 'z')
-                {
-                    av[j][i] -=  32;
-                }
-                i++;
-            }
+            argv = av[j];
+            for (int i = 0; i < argv.length(); i++)
+                std::cout << static_cast<char>(std::toupper(argv[i]));
             j++;
         }
-        int i = 1;
-        while (i < ac)
-            std::cout << av[i++];
         std::cout << std::endl ;
     }
     return 0;
