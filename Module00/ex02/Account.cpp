@@ -115,8 +115,8 @@ bool	Account::makeWithdrawal( int withdrawal )
     
     std::cout << "index:"  << _accountIndex
     << ";p_amount:" << p_amount << 
-    ";withdrawal:" << withdrawal <<
-    ":refused" << std::endl;
+    ";withdrawal:" <<
+    "refused" << std::endl;
     
     return false;
 }
