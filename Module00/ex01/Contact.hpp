@@ -16,31 +16,30 @@
 #include <iostream>
 #include <string>
 #include <cstdlib> 
-using  namespace std;
 
 
 class Contact {
     private:
-        string FirstName;
-        string LastName;
-        string NickName;
-        string PhoneNumber;
-        string DarkestSecret;
+        std::string FirstName;
+        std::string LastName;
+        std::string NickName;
+        std::string PhoneNumber;
+        std::string DarkestSecret;
     public:
         /*constructor*/
         Contact();
         /*seters*/
-        void    setFirstName(string FirstName);
-        void    setLastName(string LastName);
-        void    setNickName(string NickName);
-        void    setPhoneNumber(string PhoneNumber);
-        void    setDarkestsecret(string Darkestsecret);
+        void    setFirstName(std::string FirstName);
+        void    setLastName(std::string LastName);
+        void    setNickName(std::string NickName);
+        void    setPhoneNumber(std::string PhoneNumber);
+        void    setDarkestsecret(std::string Darkestsecret);
         /*geters*/
-        string  getFirstName() const;
-        string  getLastName() const;
-        string  getNickName() const;
-        string  getPhoneNumber() const;
-        string  getDarkestsecret() const;
+        std::string  getFirstName() const;
+        std::string  getLastName() const;
+        std::string  getNickName() const;
+        std::string  getPhoneNumber() const;
+        std::string  getDarkestsecret() const;
         
         bool isEmpty() const;
 };

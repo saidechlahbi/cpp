@@ -16,26 +16,26 @@
 Contact CreateContact()
 {
     Contact new_contact;
-    string input;
+    std::string input;
     
-    cout << "Enter first name" << endl;
-    getline(cin, input);
+    std::cout << "Enter first name" << std::endl;
+    getline(std::cin, input);
     new_contact.setFirstName(input);
 
-    cout << "Enter last name" << endl;
-    getline(cin, input);
+    std::cout << "Enter last name" << std::endl;
+    getline(std::cin, input);
     new_contact.setLastName(input);
 
-    cout << "Enter nickname" << endl;
-    getline(cin, input);
+    std::cout << "Enter nickname" << std::endl;
+    getline(std::cin, input);
     new_contact.setNickName(input);
 
-    cout << "Enter phone number" << endl;
-    getline(cin, input);
+    std::cout << "Enter phone number" << std::endl;
+    getline(std::cin, input);
     new_contact.setPhoneNumber(input);
 
-    cout << "Enter darkest secret" << endl;
-    getline(cin, input);
+    std::cout << "Enter darkest secret" << std::endl;
+    getline(std::cin, input);
     new_contact.setDarkestsecret(input);
     
     return new_contact;
@@ -43,43 +43,43 @@ Contact CreateContact()
 
 int main()
 {
-    string command;
+    std::string command;
     PhoneBook new_phonebook;
-    cout << "<------ Welcom to my awesome phonebook ------>" << endl;
-    cout << "Availabe commands: ADD, SEARCH, EXIT" << endl;
+    std::cout << "<------ Welcom to my awesome phonebook ------>" << std::endl;
+    std::cout << "Availabe commands: ADD, SEARCH, EXIT" << std::endl;
     while (true)
     {
-        cout << "> ";
-        getline(cin, command);
+        std::cout << "> ";
+        getline(std::cin, command);
         if (command == "ADD")
         {
             Contact new_contact = CreateContact();
-            cout  <<  new_contact.isEmpty() << endl;
+            std::cout  <<  new_contact.isEmpty() << std::endl;
             if (new_contact.isEmpty())
-                cout << "Error: All the fields must br filled! contact not saved" << endl;
+                std::cout << "Error: All the fields must br filled! contact not saved" << std::endl;
             else
             {
                 new_phonebook.AddContact(new_contact);
-                cout <<  "Contact added successfully!" << endl;
+                std::cout <<  "Contact added successfully!" << std::endl;
             }
         }
         else if (command == "SEARCH")
         {
             if (new_phonebook.GetContactCount() == 0)
             {
-                cout << "Phonebook is empty!" << endl;
+                std::cout << "Phonebook is empty!" << std::endl;
                 continue;
             }
             new_phonebook.DisplayContacts();
-            cout << "Enter the contact index: ";
-            string index_s;
-            getline(cin, index_s);
+            std::cout << "Enter the contact index: ";
+            std::string index_s;
+            getline(std::cin, index_s);
             int index = atoi(index_s.c_str());
-            for (string::size_type i = 0; i < index_s.length(); i++)
+            for (std::string::size_type i = 0; i < index_s.length(); i++)
             {
                 if (!isdigit(index_s[i]) || index > 10 || index < 0)
                 {
-                    cout << "Invalid input: please enter a valid number!" << endl;  
+                    std::cout << "Invalid input: please enter a valid number!" << std::endl;  
                     continue;   
                 }
             }
@@ -87,11 +87,11 @@ int main()
         }
         else if (command == "EXIT")
         {
-            cout << "Goodbye!" << endl;
+            std::cout << "Goodbye!" << std::endl;
             break;
         }
         else
-            cout << "Invalid command! Use ADD, SEARCH or EXIT" << endl;
+            std::cout << "Invalid command! Use ADD, SEARCH or EXIT" << std::endl;
     }
     return 0;
 }

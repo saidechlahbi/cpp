@@ -12,7 +12,7 @@
 
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
-#include <cstdlib> 
+
 #include "Contact.hpp"
 
 class PhoneBook{
@@ -20,7 +20,7 @@ class PhoneBook{
         Contact Contacts[8];
         int ContactCount;
         int OldIndex;
-        string TruncateField(const string& field) const;
+        std::string TruncateField(const std::string& field) const;
         
     public:
         PhoneBook();

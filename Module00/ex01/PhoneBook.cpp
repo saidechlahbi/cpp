@@ -16,7 +16,7 @@
 
 PhoneBook::PhoneBook(): ContactCount(0), OldIndex(0) {}
 
-string PhoneBook::TruncateField(const string& field) const
+std::string PhoneBook::TruncateField(const std::string& field) const
 {
     if (field.length() > 10)
         return field.substr(0,9) + ".";
@@ -38,25 +38,25 @@ void PhoneBook::AddContact(const Contact& contact)
 }
 void PhoneBook::DisplayContacts() const
 {
-    cout << setw(10) << "Index" << "|"
-        << setw(10) <<"First Name" << "|"
-        << setw(10) << "Last Name" << "|"
-        << setw(10) << "Nickname" << endl;
+    std::cout << std::setw(10) << "Index" << "|"
+        << std::setw(10) <<"First Name" << "|"
+        << std::setw(10) << "Last Name" << "|"
+        << std::setw(10) << "Nickname" << std::endl;
     for (int i = 0; i < ContactCount; i++)
     {
-        cout << setw(10) << i << "|"
-        << setw(10) << TruncateField(Contacts[i].getFirstName()) << "|"
-        << setw(10) << TruncateField(Contacts[i].getLastName()) << "|"
-        << setw(10) << TruncateField(Contacts[i].getNickName()) << endl;
+        std::cout << std::setw(10) << i << "|"
+        << std::setw(10) << TruncateField(Contacts[i].getFirstName()) << "|"
+        << std::setw(10) << TruncateField(Contacts[i].getLastName()) << "|"
+        << std::setw(10) << TruncateField(Contacts[i].getNickName()) << std::endl;
     }
 }
 void PhoneBook::DisplayContactsDetails(const int index) const
 {
-    cout << setw(10) << Contacts[index].getFirstName() << "|"
-    << setw(10) <<  Contacts[index].getLastName() << "|"
-    << setw(10) <<  Contacts[index].getNickName() << "|"
-    << setw(10) <<  Contacts[index].getPhoneNumber() << "|"
-    << setw(10) <<  Contacts[index].getDarkestsecret() << endl;
+    std::cout << std::setw(10) << Contacts[index].getFirstName() << "|"
+    << std::setw(10) <<  Contacts[index].getLastName() << "|"
+    << std::setw(10) <<  Contacts[index].getNickName() << "|"
+    << std::setw(10) <<  Contacts[index].getPhoneNumber() << "|"
+    << std::setw(10) <<  Contacts[index].getDarkestsecret() << std::endl;
 }
 int PhoneBook::GetContactCount() const
 {
