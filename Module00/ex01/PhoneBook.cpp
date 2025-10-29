@@ -52,6 +52,11 @@ void PhoneBook::DisplayContacts() const
 }
 void PhoneBook::DisplayContactsDetails(const int index) const
 {
+    if (index > ContactCount)
+    {
+        std::cout << "Error: Contact not found at this index!" << std::endl;
+        return ;
+    }
     std::cout << std::setw(10) << Contacts[index].getFirstName() << "|"
     << std::setw(10) <<  Contacts[index].getLastName() << "|"
     << std::setw(10) <<  Contacts[index].getNickName() << "|"

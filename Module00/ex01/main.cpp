@@ -13,6 +13,7 @@
 #include  "PhoneBook.hpp"
 #include  "Contact.hpp"
 
+#include <sstream>
 Contact CreateContact()
 {
     Contact new_contact;
@@ -54,9 +55,8 @@ int main()
         if (command == "ADD")
         {
             Contact new_contact = CreateContact();
-            std::cout  <<  new_contact.isEmpty() << std::endl;
             if (new_contact.isEmpty())
-                std::cout << "Error: All the fields must br filled! contact not saved" << std::endl;
+                std::cout << "Error: All the fields must be filled! contact not saved" << std::endl;
             else
             {
                 new_phonebook.AddContact(new_contact);
@@ -74,14 +74,27 @@ int main()
             std::cout << "Enter the contact index: ";
             std::string index_s;
             getline(std::cin, index_s);
-            int index = atoi(index_s.c_str());
+            std::stringstream value(index_s);
+            bool is_valid = true;
+            int index;
+            value >> index;
             for (std::string::size_type i = 0; i < index_s.length(); i++)
             {
-                if (!isdigit(index_s[i]) || index > 10 || index < 0)
+                if (!std::isdigit(index_s[i]))
                 {
                     std::cout << "Invalid input: please enter a valid number!" << std::endl;  
-                    continue;   
+                    is_valid = false;
+                    break;
                 }
+            }
+            if (!is_valid || index_s.empty())
+            {
+                continue;    
+            }
+            if (index < 0 || index > 7)
+            {
+                std::cout << "Invalid index: please enter a number between 0 and 7!" << std::endl;
+                continue;    
             }
             new_phonebook.DisplayContactsDetails(index);
         }
