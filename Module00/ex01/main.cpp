@@ -6,12 +6,15 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:17:15 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/10/30 14:00:57 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/10/30 14:21:23 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include  "PhoneBook.hpp"
 #include  "Contact.hpp"
+#include <sstream>
+
+bool eof_detected = false; 
 
 Contact CreateContact()
 {
@@ -19,23 +22,43 @@ Contact CreateContact()
     std::string input;
     
     std::cout << "Enter first name" << std::endl;
-    getline(std::cin, input);
+    if (!getline(std::cin, input))
+    {
+        eof_detected = true;
+        return new_contact;
+    }
     new_contact.setFirstName(input);
 
     std::cout << "Enter last name" << std::endl;
-    getline(std::cin, input);
+    if (!getline(std::cin, input))
+    {
+        eof_detected = true;
+        return new_contact;
+    }
     new_contact.setLastName(input);
 
     std::cout << "Enter nickname" << std::endl;
-    getline(std::cin, input);
+    if (!getline(std::cin, input))
+    {
+        eof_detected = true;
+        return new_contact;
+    }
     new_contact.setNickName(input);
 
     std::cout << "Enter phone number" << std::endl;
-    getline(std::cin, input);
+    if (!getline(std::cin, input))
+    {
+        eof_detected = true;
+        return new_contact;
+    }
     new_contact.setPhoneNumber(input);
 
     std::cout << "Enter darkest secret" << std::endl;
-    getline(std::cin, input);
+    if (!getline(std::cin, input))
+    {
+        eof_detected = true;
+        return new_contact;
+    }
     new_contact.setDarkestsecret(input);
     
     return new_contact;
@@ -55,6 +78,8 @@ int main()
         if (command == "ADD")
         {
             Contact new_contact = CreateContact();
+            if (eof_detected)
+                break ;
             if (new_contact.isEmpty())
                 std::cout << "Error: All the fields must be filled! contact not saved" << std::endl;
             else
@@ -74,9 +99,7 @@ int main()
             std::cout << "Enter the contact index: ";
             std::string index_s;
             if (!getline(std::cin, index_s))
-            {    
-                break ;
-            }
+                break;
             std::stringstream value(index_s);
             bool is_valid = true;
             int index;
@@ -91,9 +114,7 @@ int main()
                 }
             }
             if (!is_valid || index_s.empty())
-            {
                 continue;    
-            }
             if (index < 0 || index > 7)
             {
                 std::cout << "Invalid index: please enter a number between 0 and 7!" << std::endl;
