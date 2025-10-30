@@ -1,0 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/30 15:08:06 by sechlahb          #+#    #+#             */
+/*   Updated: 2025/10/30 16:34:58 by sechlahb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FIXED.HPP
+#define FIXED.HPP
+
+class  Fixed
+{
+    private:
+        int fixed_point_num;
+        static const frac_bits;
+    public:
+        Fixed();
+        Fixed(const Fixed& original);
+        Fixed& operator=(const Fixed& original);
+        ~Fixed();
+        int getRawBits( void );
+        void setRawBits( int const raw );
+}
+
+#endif /*FIXED.HPP*/
+
