@@ -6,14 +6,13 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:17:15 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/10/18 21:51:52 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/10/30 14:00:57 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include  "PhoneBook.hpp"
 #include  "Contact.hpp"
 
-#include <sstream>
 Contact CreateContact()
 {
     Contact new_contact;
@@ -51,7 +50,8 @@ int main()
     while (true)
     {
         std::cout << "> ";
-        getline(std::cin, command);
+        if (!getline(std::cin, command))
+            break ;
         if (command == "ADD")
         {
             Contact new_contact = CreateContact();
@@ -73,7 +73,10 @@ int main()
             new_phonebook.DisplayContacts();
             std::cout << "Enter the contact index: ";
             std::string index_s;
-            getline(std::cin, index_s);
+            if (!getline(std::cin, index_s))
+            {    
+                break ;
+            }
             std::stringstream value(index_s);
             bool is_valid = true;
             int index;
