@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 15:08:06 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/10/30 16:34:58 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/02 19:07:19 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ class  Fixed
         float   toFloat() const;
         int     toInt() const;
         
-        std::ostream& operator<<(std::ostream& os, Fixed const& f);
 };
-
+    
+std::ostream& operator<<(std::ostream& os, Fixed const& f);
 
 #endif /*FIXED_HPP*/
 

@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 15:07:57 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/02 19:03:12 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/02 19:09:49 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ Fixed::Fixed(const int n)
 
 Fixed::Fixed(const float f)
 {
-    _fixedPointValue = static_cast<float> (f << _fractionalBits);
-    std::cout << "Float constructor called" <, std::endl;
+    _fixedPointValue = (static_cast<int>(f)) << _fractionalBits;
+    std::cout << "Float constructor called" << std::endl;
 }
 
 /*copy constructor*/
@@ -80,7 +80,7 @@ int     Fixed::toInt() const
 
 /*stream*/
 
-std::ostream& Fixed::operator<<(std::ostream& os, Fixed const& f)
+std::ostream& operator<<(std::ostream& os, Fixed const& f)
 {
     os << f.toFloat();
     return os;
