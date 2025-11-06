@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 15:07:57 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/02 19:09:49 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/06 21:03:34 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Fixed::Fixed(const int n)
 
 Fixed::Fixed(const float f)
 {
-    _fixedPointValue = (static_cast<int>(f)) << _fractionalBits;
+    _fixedPointValue = roundf(f * (1 << _fractionalBits));
     std::cout << "Float constructor called" << std::endl;
 }
 
@@ -71,7 +71,7 @@ void Fixed::setRawBits( int const raw )
 
 float   Fixed::toFloat() const
 {
-    return _fixedPointValue  >> 8;
+    return static_cast<float>(_fixedPointValue)  / (1 << _fractionalBits);
 }
 int     Fixed::toInt() const
 {
