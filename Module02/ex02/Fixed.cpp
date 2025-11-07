@@ -6,13 +6,13 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 15:07:57 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/07 19:48:35 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/07 19:55:29 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-const int _fractionalBits = 8;
+const int Fixed::_fractionalBits = 8;
 
 
 int Fixed::getRawBits( void ) const
