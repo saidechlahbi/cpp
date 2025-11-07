@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 15:08:06 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/07 18:42:18 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/07 19:02:50 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ class  Fixed
         Fixed& operator/(const Fixed& original);
     
         /*increment and decrement*/
-        Fixed& operator++(int); // i++
-        Fixed& operator--(int); // i--
+        Fixed operator++(int); // i++
+        Fixed operator--(int); // i--
         Fixed& operator++(); // ++i
         Fixed& operator--(); // --i
 
