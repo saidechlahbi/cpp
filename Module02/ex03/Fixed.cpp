@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 15:07:57 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/09 21:36:21 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/09 22:13:40 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int Fixed::getRawBits( void ) const
 {
     return _fixedPointValue;
 }
-void Fixed::setRawBits( int const raw )
+void Fixed::setRawBits( int const raw ) const
 {
     _fixedPointValue = raw;
 }

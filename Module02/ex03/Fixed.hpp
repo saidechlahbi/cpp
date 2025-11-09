@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 15:08:06 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/09 21:36:14 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/09 22:13:34 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ class  Fixed
         // static const Fixed& max(const Fixed& a, const Fixed& b);
         
         int getRawBits( void ) const;
-        void setRawBits( int const raw );
+        void setRawBits( int const raw ) const;
     
         float   toFloat() const;
         int     toInt() const;
