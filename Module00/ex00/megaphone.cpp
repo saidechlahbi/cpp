@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 21:33:27 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/08 18:21:42 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/09 17:39:43 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(int ac, char **av)
         {
             argv = av[j];
             for (size_t i = 0; i < argv.length(); i++)
-                std::cout << static_cast<char>(std::toupper(argv[i]));
+                std::cout << (char)(std::toupper(argv[i]));
             j++;
         }
         std::cout << std::endl ;

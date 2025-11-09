@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 15:07:57 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/07 19:55:29 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/09 17:31:27 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void Fixed::setRawBits( int const raw )
     
 float   Fixed::toFloat() const
 {
-    return static_cast<float>(_fixedPointValue) / (1 << _fractionalBits);
+    return ((float)_fixedPointValue / (1 << _fractionalBits));
 }
 int     Fixed::toInt() const
 {
@@ -45,7 +45,7 @@ Fixed::Fixed(const int n)
 
 Fixed::Fixed(const float f)
 {
-    _fixedPointValue = static_cast<int> (f) * (1 << _fractionalBits);
+    _fixedPointValue = roundf(f * (1 << _fractionalBits));
 }
 
 Fixed::Fixed(const Fixed& original)
@@ -109,22 +109,22 @@ bool Fixed::operator!=(const Fixed& original) const
 
 Fixed& Fixed::operator+(const Fixed& original)
 {
-    _fixedPointValue += original.getRawBits();
+    _fixedPointValue = roundf((((float)_fixedPointValue / 256) + ((float)original.getRawBits() / 256)) * 256);
     return *this;
 }
 Fixed& Fixed::operator-(const Fixed& original)
 {
-    _fixedPointValue -= original.getRawBits();
+    _fixedPointValue = roundf((((float)_fixedPointValue / 256) - ((float)original.getRawBits() / 256)) * 256);
     return *this;
 }
 Fixed& Fixed::operator*(const Fixed& original)
 {
-    _fixedPointValue *= original.getRawBits();
+    _fixedPointValue = roundf((((float)_fixedPointValue / 256) * ((float)original.getRawBits() / 256)) * 256);
     return *this;
 }
 Fixed& Fixed::operator/(const Fixed& original)
 {
-    _fixedPointValue /= original.getRawBits();
+    _fixedPointValue = roundf((((float)_fixedPointValue / 256) / ((float)original.getRawBits() / 256)) * 256);
     return *this;
 }
 
