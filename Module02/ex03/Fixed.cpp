@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 15:07:57 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/09 17:31:27 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/09 21:36:21 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,125 +63,125 @@ Fixed::~Fixed(){}
 
 /*comparison operators*/
 
-bool Fixed::operator>(const Fixed& original) const
-{
-    if (_fixedPointValue > original.getRawBits())
-        return true;
-    return false;
-}
+// bool Fixed::operator>(const Fixed& original) const
+// {
+//     if (_fixedPointValue > original.getRawBits())
+//         return true;
+//     return false;
+// }
 
-bool Fixed::operator<(const Fixed& original) const
-{
-    if (_fixedPointValue < original.getRawBits())
-        return true;
-    return false;
-}
+// bool Fixed::operator<(const Fixed& original) const
+// {
+//     if (_fixedPointValue < original.getRawBits())
+//         return true;
+//     return false;
+// }
 
-bool Fixed::operator>=(const Fixed& original) const
-{
-    if (_fixedPointValue >= original.getRawBits())
-        return true;
-    return false;
-}
+// bool Fixed::operator>=(const Fixed& original) const
+// {
+//     if (_fixedPointValue >= original.getRawBits())
+//         return true;
+//     return false;
+// }
 
-bool Fixed::operator<=(const Fixed& original) const
-{
-    if (_fixedPointValue <= original.getRawBits())
-        return true;
-    return false;
-}
+// bool Fixed::operator<=(const Fixed& original) const
+// {
+//     if (_fixedPointValue <= original.getRawBits())
+//         return true;
+//     return false;
+// }
 
-bool Fixed::operator==(const Fixed& original) const
-{
-    if (_fixedPointValue == original.getRawBits())
-        return true;
-    return false;
-}
+// bool Fixed::operator==(const Fixed& original) const
+// {
+//     if (_fixedPointValue == original.getRawBits())
+//         return true;
+//     return false;
+// }
 
-bool Fixed::operator!=(const Fixed& original) const
-{
-    if (_fixedPointValue != original.getRawBits())
-        return true;
-    return false;
-}
+// bool Fixed::operator!=(const Fixed& original) const
+// {
+//     if (_fixedPointValue != original.getRawBits())
+//         return true;
+//     return false;
+// }
 
-/*arithmetic operators*/
+// /*arithmetic operators*/
 
-Fixed& Fixed::operator+(const Fixed& original)
-{
-    _fixedPointValue = roundf((((float)_fixedPointValue / 256) + ((float)original.getRawBits() / 256)) * 256);
-    return *this;
-}
-Fixed& Fixed::operator-(const Fixed& original)
-{
-    _fixedPointValue = roundf((((float)_fixedPointValue / 256) - ((float)original.getRawBits() / 256)) * 256);
-    return *this;
-}
-Fixed& Fixed::operator*(const Fixed& original)
-{
-    _fixedPointValue = roundf((((float)_fixedPointValue / 256) * ((float)original.getRawBits() / 256)) * 256);
-    return *this;
-}
-Fixed& Fixed::operator/(const Fixed& original)
-{
-    _fixedPointValue = roundf((((float)_fixedPointValue / 256) / ((float)original.getRawBits() / 256)) * 256);
-    return *this;
-}
+// Fixed& Fixed::operator+(const Fixed& original)
+// {
+//     _fixedPointValue = roundf((((float)_fixedPointValue / 256) + ((float)original.getRawBits() / 256)) * 256);
+//     return *this;
+// }
+// Fixed& Fixed::operator-(const Fixed& original)
+// {
+//     _fixedPointValue = roundf((((float)_fixedPointValue / 256) - ((float)original.getRawBits() / 256)) * 256);
+//     return *this;
+// }
+// Fixed& Fixed::operator*(const Fixed& original)
+// {
+//     _fixedPointValue = roundf((((float)_fixedPointValue / 256) * ((float)original.getRawBits() / 256)) * 256);
+//     return *this;
+// }
+// Fixed& Fixed::operator/(const Fixed& original)
+// {
+//     _fixedPointValue = roundf((((float)_fixedPointValue / 256) / ((float)original.getRawBits() / 256)) * 256);
+//     return *this;
+// }
 
-/*increment and decrement*/
+// /*increment and decrement*/
 
-Fixed Fixed::operator++(int)
-{
-    Fixed old = *this;
-    _fixedPointValue++;
-    return old;
-}
-Fixed Fixed::operator--(int)
-{
-    Fixed old = *this;
-    _fixedPointValue--;
-    return old;
-}
-Fixed& Fixed::operator++()
-{
-    ++_fixedPointValue;
-    return *this;
-}
-Fixed& Fixed::operator--()
-{
-    --_fixedPointValue;
-    return *this;
-}
+// Fixed Fixed::operator++(int)
+// {
+//     Fixed old = *this;
+//     _fixedPointValue++;
+//     return old;
+// }
+// Fixed Fixed::operator--(int)
+// {
+//     Fixed old = *this;
+//     _fixedPointValue--;
+//     return old;
+// }
+// Fixed& Fixed::operator++()
+// {
+//     ++_fixedPointValue;
+//     return *this;
+// }
+// Fixed& Fixed::operator--()
+// {
+//     --_fixedPointValue;
+//     return *this;
+// }
 
 
-Fixed& Fixed::min(Fixed& a, Fixed& b)
-{
-    if (a < b)
-        return a;
-    return b;
-}
-const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
-{
-    if (a < b)
-        return a;
-    return b;
-}
+// Fixed& Fixed::min(Fixed& a, Fixed& b)
+// {
+//     if (a < b)
+//         return a;
+//     return b;
+// }
+// const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
+// {
+//     if (a < b)
+//         return a;
+//     return b;
+// }
 
-Fixed& Fixed::max(Fixed& a, Fixed& b)
-{
-    if (a > b)
-        return a;
-    return b;
-}
-const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
-{
-    if (a > b)
-        return a;
-    return b;
-}
+// Fixed& Fixed::max(Fixed& a, Fixed& b)
+// {
+//     if (a > b)
+//         return a;
+//     return b;
+// }
+// const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
+// {
+//     if (a > b)
+//         return a;
+//     return b;
+// }
 
-std::ostream& operator<<(std::ostream& os, Fixed const& f)
-{
-    os << f.toFloat();
-    return os;
-}
+// std::ostream& operator<<(std::ostream& os, Fixed const& f)
+// {
+//     os << f.toFloat();
+//     return os;
+// }

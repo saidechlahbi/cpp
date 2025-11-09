@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 15:08:06 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/07 19:49:30 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/09 21:36:14 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,33 +29,33 @@ class  Fixed
         Fixed& operator=(const Fixed& original);
         ~Fixed();
 
-        /* comparison operators*/
-        bool operator>(const Fixed& original) const;
-        bool operator<(const Fixed& original) const;
-        bool operator>=(const Fixed& original)const;
-        bool operator<=(const Fixed& original) const;
-        bool operator==(const Fixed& original) const;
-        bool operator!=(const Fixed& original) const;
+        // /* comparison operators*/
+        // bool operator>(const Fixed& original) const;
+        // bool operator<(const Fixed& original) const;
+        // bool operator>=(const Fixed& original)const;
+        // bool operator<=(const Fixed& original) const;
+        // bool operator==(const Fixed& original) const;
+        // bool operator!=(const Fixed& original) const;
 
-        /*arithmetic operators*/
-        Fixed& operator+(const Fixed& original);
-        Fixed& operator-(const Fixed& original);
-        Fixed& operator*(const Fixed& original);
-        Fixed& operator/(const Fixed& original);
+        // /*arithmetic operators*/
+        // Fixed& operator+(const Fixed& original);
+        // Fixed& operator-(const Fixed& original);
+        // Fixed& operator*(const Fixed& original);
+        // Fixed& operator/(const Fixed& original);
     
-        /*increment and decrement*/
-        Fixed operator++(int); // i++
-        Fixed operator--(int); // i--
-        Fixed& operator++(); // ++i
-        Fixed& operator--(); // --i
+        // /*increment and decrement*/
+        // Fixed operator++(int); // i++
+        // Fixed operator--(int); // i--
+        // Fixed& operator++(); // ++i
+        // Fixed& operator--(); // --i
 
-        /*min*/
-        static Fixed& min(Fixed& a, Fixed& b);
-        static const Fixed& min(const Fixed& a, const Fixed& b); 
+        // /*min*/
+        // static Fixed& min(Fixed& a, Fixed& b);
+        // static const Fixed& min(const Fixed& a, const Fixed& b); 
         
-        /*max*/
-        static Fixed& max(Fixed& a, Fixed& b);
-        static const Fixed& max(const Fixed& a, const Fixed& b);
+        // /*max*/
+        // static Fixed& max(Fixed& a, Fixed& b);
+        // static const Fixed& max(const Fixed& a, const Fixed& b);
         
         int getRawBits( void ) const;
         void setRawBits( int const raw );
