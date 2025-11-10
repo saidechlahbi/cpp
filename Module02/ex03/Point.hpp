@@ -27,9 +27,7 @@ class Point{
         ~Point();
         /*seters and geters*/
         Fixed getX() const;
-        void setX(const Fixed& a);
         Fixed getY() const;
-        void setY(const Fixed& b);
 };
-
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 #endif /*POINT_HPP*/

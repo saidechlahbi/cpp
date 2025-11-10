@@ -14,7 +14,13 @@
 #include "Fixed.hpp"
 
 int main( void ) {
-    Point point;
-    std::cout << point.getX().getRawBits() << std::endl;
+    Point x(0,0);
+    Point y(0,5);
+    Point z(5,0);
+    Point p(3,2);
+    if (bsp(x,y,z,p))
+        std::cout << "The point is inside the triangle" << std::endl;
+    else
+        std::cout << "The point is outside the triangle" << std::endl;
     return 0;
 }

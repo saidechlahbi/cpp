@@ -19,10 +19,10 @@ int Fixed::getRawBits( void ) const
 {
     return _fixedPointValue;
 }
-void Fixed::setRawBits( int const raw ) const
-{
-    _fixedPointValue = raw;
-}
+// void Fixed::setRawBits( int const raw ) const
+// {
+//     _fixedPointValue = raw;
+// }
     
 float   Fixed::toFloat() const
 {

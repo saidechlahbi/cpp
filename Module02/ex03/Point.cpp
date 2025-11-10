@@ -12,35 +12,28 @@
 
 #include "Point.hpp"
 
+
 Point::Point(): x(0), y(0){}
 Point::Point(const int a, const int b): x(a), y(b){}
-Point::Point(const Point& origin)
-{
-    x.setRawBits(origin.getX().getRawBits());
-    y.setRawBits(origin.getY().getRawBits());
-}
+
+/*avoiding shallow copy*/
+Point::Point(const Point& origin): x(origin.x), y(origin.y) {}
+
 Point& Point::operator=(const Point& origin)
 {
-    x.setRawBits(origin.getX().getRawBits());
-    y.setRawBits(origin.getY().getRawBits());
+    (void)origin;
     return *this;
 }
 Point::~Point(){}
 
 
+/*geters*/
 Fixed Point::getX() const
 {
     return x;
 }
-void Point::setX(const Fixed& a)
-{
-    x = a;
-}
+
 Fixed Point::getY() const
 {
     return y;
-}
-void Point::setY(const Fixed& b)
-{
-    y = b;
 }

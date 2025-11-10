@@ -58,7 +58,7 @@ class  Fixed
         // static const Fixed& max(const Fixed& a, const Fixed& b);
         
         int getRawBits( void ) const;
-        void setRawBits( int const raw ) const;
+        // void setRawBits( int const raw ) const;
     
         float   toFloat() const;
         int     toInt() const;
