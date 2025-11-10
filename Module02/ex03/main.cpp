@@ -17,7 +17,7 @@ int main( void ) {
     Point x(0,0);
     Point y(0,5);
     Point z(5,0);
-    Point p(3,2);
+    Point p(2,0);
     if (bsp(x,y,z,p))
         std::cout << "The point is inside the triangle" << std::endl;
     else
