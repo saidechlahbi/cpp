@@ -6,14 +6,14 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 22:15:48 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/10/21 01:19:23 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/13 14:01:11 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <ctime> 
 #include <iostream>
-#include <string>
+#include <iomanip>
 
 /*-------------initial the static members-------------*/
 
@@ -66,6 +66,7 @@ Account::Account( int initial_deposit )
     std::cout << "index:" << _accountIndex
     << ";amount:" << _amount << ";created" << std::endl;
 }
+
 Account::~Account( void )
 {
     _displayTimestamp();
@@ -141,36 +142,12 @@ void Account::_displayTimestamp( void )
 {
 	std::time_t now = std::time(NULL);
 	std::tm* local_time = std::localtime(&now);
-	
-	std::cout << "[";
-	std::cout << local_time->tm_year + 1900;
-	
-	// Month
-	if (local_time->tm_mon + 1 < 10)
-		std::cout << "0";
-	std::cout << local_time->tm_mon + 1;
-	
-	// Day
-	if (local_time->tm_mday < 10)
-		std::cout << "0";
-	std::cout << local_time->tm_mday;
-	
-	std::cout << "_";
-	
-	// Hour
-	if (local_time->tm_hour < 10)
-		std::cout << "0";
-	std::cout << local_time->tm_hour;
-	
-	// Minute
-	if (local_time->tm_min < 10)
-		std::cout << "0";
-	std::cout << local_time->tm_min;
-	
-	// Second
-	if (local_time->tm_sec < 10)
-		std::cout << "0";
-	std::cout << local_time->tm_sec;
-	
-	std::cout << "] ";
+
+
+    std::cout << std::setfill('0') << "[" << local_time->tm_year + 1900
+    << local_time->tm_mon + 1 
+    << local_time->tm_mday  << "_"
+    << local_time->tm_hour 
+    << local_time->tm_min
+    << local_time->tm_sec << "] ";
 }

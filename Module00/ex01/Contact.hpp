@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 10:45:29 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/10/28 23:03:36 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/13 14:00:52 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define CONTACT_HPP 
 
 #include <iostream>
-#include <string>
 
 class Contact {
     private:

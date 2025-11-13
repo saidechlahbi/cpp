@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:17:51 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/08 18:42:02 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/13 13:00:03 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 PhoneBook::PhoneBook(): ContactCount(0), OldIndex(0) {}
 
-std::string PhoneBook::TruncateField(const std::string& field) const
+std::string PhoneBook::TruncateField(const std::string field) const
 {
     if (field.length() > 10)
         return field.substr(0,9) + ".";
@@ -57,7 +57,7 @@ void PhoneBook::DisplayContactsDetails(const int index) const
         std::cout << "Error: Contact not found at this index!" << std::endl;
         return ;
     }
-    std::cout << std::setw(10) << Contacts[index].getFirstName() << "|"
+    std::cout << std::setw(10) << std::left <<Contacts[index].getFirstName() << "|"
     << std::setw(10) <<  Contacts[index].getLastName() << "|"
     << std::setw(10) <<  Contacts[index].getNickName() << "|"
     << std::setw(10) <<  Contacts[index].getPhoneNumber() << "|"

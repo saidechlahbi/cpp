@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:17:15 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/10/30 14:21:23 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/13 11:57:19 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,18 @@ Contact CreateContact()
         eof_detected = true;
         return new_contact;
     }
-    new_contact.setPhoneNumber(input);
+    bool is_valid = true;
+    for (size_t i = 0; i < input.length(); i++)
+    {
+        if (!std::isdigit(input[i]))
+        {
+            std::cout << "Invalid input: please enter a valid number!" << std::endl;  
+            is_valid = false;
+            break;
+        }
+    }
+    if (is_valid)
+        new_contact.setPhoneNumber(input);
 
     std::cout << "Enter darkest secret" << std::endl;
     if (!getline(std::cin, input))
@@ -104,7 +115,7 @@ int main()
             bool is_valid = true;
             int index;
             value >> index;
-            for (std::string::size_type i = 0; i < index_s.length(); i++)
+            for (size_t i = 0; i < index_s.length(); i++)
             {
                 if (!std::isdigit(index_s[i]))
                 {

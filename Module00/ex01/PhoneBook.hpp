@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:17:41 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/10/18 17:32:49 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/13 13:00:41 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class PhoneBook{
         Contact Contacts[8];
         int ContactCount;
         int OldIndex;
-        std::string TruncateField(const std::string& field) const;
+        std::string TruncateField(const std::string field) const;
         
     public:
         PhoneBook();
