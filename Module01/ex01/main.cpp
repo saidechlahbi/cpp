@@ -12,19 +12,13 @@
 
 #include "Zombie.hpp"
 
-Zombie* zombieHorde( int N, std::string name );
-
-int main ()
+int main()
 {
-    int horde_szie = 10;
-    Zombie *horde = zombieHorde(horde_szie, "hordeZombie");
-    if (!horde)
-    {
-        std::cout << "allocation failed to create a horde zombies" << std::endl;
+    Zombie *hord = zombieHorde(5, "boo");
+    if (!hord)
         return 1;
-    }
-    for (int i = 0; i < horde_szie; i++)
-        horde[i].announce();
-    delete[] horde;
-    return 1;
+    for(int i = 0; i < 5; i++)
+        hord[i].announce();
+    delete[] hord;
+    return 0;
 }

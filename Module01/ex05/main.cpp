@@ -15,9 +15,7 @@
 
 int main()
 {
-    Harl boo;
-
-    boo.complain("debug");
-    
+    Harl harl;
+    harl.complain("DEBUG");
 }
 

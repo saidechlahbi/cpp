@@ -39,26 +39,21 @@ void Harl::error(void)
 
 void Harl::complain( std::string level )
 {
-
-    if (level == "DEBUG")
+    void (Harl::*functs[])(void) = 
     {
-        void (Harl::*p1)(void) = &Harl::debug;
-        (this->*p1)();
-    }
-    else  if (level == "INFO")
+        &Harl::debug,
+        &Harl::info,
+        &Harl::warning,
+        &Harl::error
+    };
+    const std::string names[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
+    for (int i = 0; i < 4; i++)
     {
-        void (Harl::*p1)(void) = &Harl::info;
-        (this->*p1)();
+        if (level == names[i])
+        {
+            (this->*functs[i])();
+            return;
+        }
     }
-    else  if (level == "WARNING")
-    {
-        void (Harl::*p1)(void) = &Harl::warning;
-         (this->*p1)();
-    }
-    else  if (level == "ERROR")
-    {
-        void (Harl::*p1)(void) = &Harl::error;
-        (this->*p1)();
-    }
-    return ;
-}  
+    std::cout << "Level not recognized: " << std::endl;
+}

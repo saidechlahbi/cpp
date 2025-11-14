@@ -12,17 +12,13 @@
 
 #include "Zombie.hpp"
 
-void randomChump( std::string name );
-Zombie* newZombie( std::string name );
-
-int main(void)
+int main ()
 {
-    Zombie *z1 = newZombie("Heapzombie");
-    if (z1)
-    {
-        z1->announce();  
-        delete z1;
-    }
-    randomChump("StackZombie");
+    Zombie *foo = newZombie("foo");
+    if (!foo)
+        return 1;
+    foo->announce();
+    randomChump("boo");
+    delete foo;
     return 0;
 }

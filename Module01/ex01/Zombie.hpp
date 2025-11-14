@@ -19,13 +19,14 @@
 class Zombie
 {
     private:
-        std::string name;
+        std::string _name;
     public:
         Zombie();
-        void setName(std::string name);
+        Zombie(std::string name);
         ~Zombie();
         void announce( void );
-        
+        void setName(std::string name);
 };
 
+Zombie* zombieHorde( int N, std::string name );
 #endif /*ZOMBIE_HPP*/

@@ -16,10 +16,10 @@ Zombie* zombieHorde( int N, std::string name )
 {
     if (N <= 0)
         return NULL;
-    Zombie *horde = new Zombie[N];
-    if (!horde)
+    Zombie *hord_of_zombie = new Zombie[N];
+    if (!hord_of_zombie)
         return NULL;
-    for(int i = 0; i < N; i++)
-        horde[i].setName(name);
-    return horde;
+    for (int i = 0; i < N; i++)
+        hord_of_zombie[i].setName(name);
+    return hord_of_zombie;
 }

@@ -11,21 +11,15 @@
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
-#include "Weapon.hpp"
-#include <iostream>
 
-HumanB::HumanB(std::string name)
-{
-    this->name = name;
-}
+HumanB::HumanB(std::string name): _name(name){}
 
 void HumanB::attack()
 {
-    if(weapon)
-        std::cout << name << " attacks with their " <<  weapon->getType() << std::endl;
+    std::cout << _name <<  " attacks with their " << _arm->getType() << std::endl;
 }
 
-void HumanB::setWeapon(Weapon& weapon)
+void HumanB::setWeapon(Weapon &arm)
 {
-    this->weapon = &weapon;
+    _arm = &arm;
 }
