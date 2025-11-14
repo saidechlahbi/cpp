@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 23:39:38 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/14 16:40:01 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/14 17:34:48 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int main (int ac, char **av)
 {
-    if  (ac != 3 || !av[1][0] || !av[2][0])
+    if (ac != 4 || !av[1][0] || !av[2][0] || !av[3][0])
     {
-        std::cerr << "Error: the argument must have value!" << std::endl;
+        std::cerr << "Usage: " << av[0] << " <filename> <s1> <s2>\n";
         return 1;
     }
     std::string s1 = av[2];
@@ -30,8 +30,8 @@ int main (int ac, char **av)
     }
     std::string rep = av[1];
     rep = rep + ".replace";
-    std::ofstream outfile(rep);
-    if (!infile.is_open())
+    std::ofstream outfile(rep.c_str());
+    if (!outfile.is_open())
     {
         std::cerr << "Failed to open " << rep << std::endl;
         return 1;
@@ -39,7 +39,9 @@ int main (int ac, char **av)
     std::string buffer;
     while (getline(infile, buffer))
     {
-        std::cout << content_rep(buffer, s1, s2);
+        outfile << content_rep(buffer, s1, s2) << std::endl;
     }
-    
+    infile.close();
+    outfile.close();
+    return 0;
 }
