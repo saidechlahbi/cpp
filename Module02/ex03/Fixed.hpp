@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 15:08:06 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/09 22:13:34 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/16 12:54:20 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class  Fixed
     private:
         int                 _fixedPointValue;
         static const int    _fractionalBits;
+        const int k;
     public:
         Fixed();
         Fixed(const int n);
@@ -29,36 +30,36 @@ class  Fixed
         Fixed& operator=(const Fixed& original);
         ~Fixed();
 
-        // /* comparison operators*/
-        // bool operator>(const Fixed& original) const;
-        // bool operator<(const Fixed& original) const;
-        // bool operator>=(const Fixed& original)const;
-        // bool operator<=(const Fixed& original) const;
-        // bool operator==(const Fixed& original) const;
-        // bool operator!=(const Fixed& original) const;
+        /* comparison operators*/
+        bool operator>(const Fixed& original) const;
+        bool operator<(const Fixed& original) const;
+        bool operator>=(const Fixed& original)const;
+        bool operator<=(const Fixed& original) const;
+        bool operator==(const Fixed& original) const;
+        bool operator!=(const Fixed& original) const;
 
-        // /*arithmetic operators*/
-        // Fixed& operator+(const Fixed& original);
-        // Fixed& operator-(const Fixed& original);
-        // Fixed& operator*(const Fixed& original);
-        // Fixed& operator/(const Fixed& original);
+        /*arithmetic operators*/
+        Fixed operator+(const Fixed& original);
+        Fixed operator-(const Fixed& original);
+        Fixed operator*(const Fixed& original);
+        Fixed operator/(const Fixed& original);
     
-        // /*increment and decrement*/
-        // Fixed operator++(int); // i++
-        // Fixed operator--(int); // i--
-        // Fixed& operator++(); // ++i
-        // Fixed& operator--(); // --i
+        /*increment and decrement*/
+        Fixed operator++(int); // i++
+        Fixed operator--(int); // i--
+        Fixed& operator++(); // ++i
+        Fixed& operator--(); // --i
 
-        // /*min*/
-        // static Fixed& min(Fixed& a, Fixed& b);
-        // static const Fixed& min(const Fixed& a, const Fixed& b); 
+        /*min*/
+        static Fixed& min(Fixed& a, Fixed& b);
+        static const Fixed& min(const Fixed& a, const Fixed& b); 
         
-        // /*max*/
-        // static Fixed& max(Fixed& a, Fixed& b);
-        // static const Fixed& max(const Fixed& a, const Fixed& b);
+        /*max*/
+        static Fixed& max(Fixed& a, Fixed& b);
+        static const Fixed& max(const Fixed& a, const Fixed& b);
         
         int getRawBits( void ) const;
-        // void setRawBits( int const raw ) const;
+        void setRawBits( int const raw );
     
         float   toFloat() const;
         int     toInt() const;

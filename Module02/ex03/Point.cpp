@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 21:48:15 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/09 22:04:01 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/16 13:14:02 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
 
-Point::Point(): x(0), y(0){}
-Point::Point(const int a, const int b): x(a), y(b){}
+Point::Point(): _x(0), _y(0){}
+Point::Point(const int a, const int b): _x(a), _y(b){}
 
 /*avoiding shallow copy*/
-Point::Point(const Point& origin): x(origin.x), y(origin.y) {}
+Point::Point(const Point& origin): _x(origin._x), _y(origin._y) {}
 
 Point& Point::operator=(const Point& origin)
 {
@@ -30,10 +30,10 @@ Point::~Point(){}
 /*geters*/
 Fixed Point::getX() const
 {
-    return x;
+    return _x;
 }
 
 Fixed Point::getY() const
 {
-    return y;
+    return _y;
 }
