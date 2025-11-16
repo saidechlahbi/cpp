@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 15:07:57 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/16 13:17:13 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/16 14:30:09 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,25 +109,25 @@ bool Fixed::operator!=(const Fixed& original) const
 }
 
 /*arithmetic operators*/
-Fixed Fixed::operator+(const Fixed& original)
+Fixed Fixed::operator+(const Fixed& original) const
 {
     Fixed new_one;
     new_one._fixedPointValue = roundf((toFloat() + original.toFloat()) * 256);
     return new_one;
 }
-Fixed Fixed::operator-(const Fixed& original)
+Fixed Fixed::operator-(const Fixed& original) const
 {
     Fixed new_one;
     new_one._fixedPointValue = roundf((toFloat() - original.toFloat()) * 256);
     return new_one;
 }
-Fixed Fixed::operator*(const Fixed& original)
+Fixed Fixed::operator*(const Fixed& original) const
 {
     Fixed new_one;
     new_one._fixedPointValue = roundf((toFloat() * original.toFloat()) * 256);
     return new_one;
 }
-Fixed Fixed::operator/(const Fixed& original)
+Fixed Fixed::operator/(const Fixed& original) const
 {
     Fixed new_one;
     new_one._fixedPointValue = roundf((toFloat() / original.toFloat()) * 256);
@@ -176,13 +176,13 @@ const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
 /*max function*/
 Fixed& Fixed::max(Fixed& a, Fixed& b)
 {
-    if (a._fixedPointValue > b._fixedPointValue)
+    if (a > b)
         return a;
     return b;
 }
 const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
 {
-    if (a._fixedPointValue > b._fixedPointValue)
+    if (a > b)
         return a;
     return b;
 }

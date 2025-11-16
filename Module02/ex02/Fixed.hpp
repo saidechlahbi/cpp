@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 15:08:06 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/16 13:16:49 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/16 14:22:08 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ class  Fixed
         bool operator!=(const Fixed& original) const;
 
         /*arithmetic operators*/
-        Fixed operator+(const Fixed& original);
-        Fixed operator-(const Fixed& original);
-        Fixed operator*(const Fixed& original);
-        Fixed operator/(const Fixed& original);
+        Fixed operator+(const Fixed& original) const;
+        Fixed operator-(const Fixed& original) const;
+        Fixed operator*(const Fixed& original) const;
+        Fixed operator/(const Fixed& original) const;
     
         /*increment and decrement*/
         Fixed operator++(int); // i++
