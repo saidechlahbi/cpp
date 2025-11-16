@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 15:07:57 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/09 17:31:27 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/16 13:17:13 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,15 @@ Fixed::Fixed(const float f)
 
 Fixed::Fixed(const Fixed& original)
 {
-    _fixedPointValue = original.getRawBits();
+    _fixedPointValue = original._fixedPointValue;
 }
 
 Fixed& Fixed::operator=(const Fixed& original)
 {
-    _fixedPointValue = original.getRawBits();
+    if (this != &original)
+    {
+        _fixedPointValue = original._fixedPointValue;
+    }
     return *this;
 }
 
@@ -65,67 +68,70 @@ Fixed::~Fixed(){}
 
 bool Fixed::operator>(const Fixed& original) const
 {
-    if (_fixedPointValue > original.getRawBits())
+    if (_fixedPointValue > original._fixedPointValue)
         return true;
     return false;
 }
 
 bool Fixed::operator<(const Fixed& original) const
 {
-    if (_fixedPointValue < original.getRawBits())
+    if (_fixedPointValue < original._fixedPointValue)
         return true;
     return false;
 }
 
 bool Fixed::operator>=(const Fixed& original) const
 {
-    if (_fixedPointValue >= original.getRawBits())
+    if (_fixedPointValue >= original._fixedPointValue)
         return true;
     return false;
 }
 
 bool Fixed::operator<=(const Fixed& original) const
 {
-    if (_fixedPointValue <= original.getRawBits())
+    if (_fixedPointValue <= original._fixedPointValue)
         return true;
     return false;
 }
 
 bool Fixed::operator==(const Fixed& original) const
 {
-    if (_fixedPointValue == original.getRawBits())
+    if (_fixedPointValue == original._fixedPointValue)
         return true;
     return false;
 }
 
 bool Fixed::operator!=(const Fixed& original) const
 {
-    if (_fixedPointValue != original.getRawBits())
+    if (_fixedPointValue != original._fixedPointValue)
         return true;
     return false;
 }
 
 /*arithmetic operators*/
-
-Fixed& Fixed::operator+(const Fixed& original)
+Fixed Fixed::operator+(const Fixed& original)
 {
-    _fixedPointValue = roundf((((float)_fixedPointValue / 256) + ((float)original.getRawBits() / 256)) * 256);
-    return *this;
+    Fixed new_one;
+    new_one._fixedPointValue = roundf((toFloat() + original.toFloat()) * 256);
+    return new_one;
 }
-Fixed& Fixed::operator-(const Fixed& original)
+Fixed Fixed::operator-(const Fixed& original)
 {
-    _fixedPointValue = roundf((((float)_fixedPointValue / 256) - ((float)original.getRawBits() / 256)) * 256);
-    return *this;
+    Fixed new_one;
+    new_one._fixedPointValue = roundf((toFloat() - original.toFloat()) * 256);
+    return new_one;
 }
-Fixed& Fixed::operator*(const Fixed& original)
+Fixed Fixed::operator*(const Fixed& original)
 {
-    _fixedPointValue = roundf((((float)_fixedPointValue / 256) * ((float)original.getRawBits() / 256)) * 256);
-    return *this;
+    Fixed new_one;
+    new_one._fixedPointValue = roundf((toFloat() * original.toFloat()) * 256);
+    return new_one;
 }
-Fixed& Fixed::operator/(const Fixed& original)
+Fixed Fixed::operator/(const Fixed& original)
 {
-    _fixedPointValue = roundf((((float)_fixedPointValue / 256) / ((float)original.getRawBits() / 256)) * 256);
-    return *this;
+    Fixed new_one;
+    new_one._fixedPointValue = roundf((toFloat() / original.toFloat()) * 256);
+    return new_one;
 }
 
 /*increment and decrement*/
@@ -153,7 +159,7 @@ Fixed& Fixed::operator--()
     return *this;
 }
 
-
+/*min function*/
 Fixed& Fixed::min(Fixed& a, Fixed& b)
 {
     if (a < b)
@@ -167,15 +173,16 @@ const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
     return b;
 }
 
+/*max function*/
 Fixed& Fixed::max(Fixed& a, Fixed& b)
 {
-    if (a > b)
+    if (a._fixedPointValue > b._fixedPointValue)
         return a;
     return b;
 }
 const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
 {
-    if (a > b)
+    if (a._fixedPointValue > b._fixedPointValue)
         return a;
     return b;
 }

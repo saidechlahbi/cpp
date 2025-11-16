@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 15:08:06 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/01 22:01:04 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/16 10:47:01 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 class  Fixed
 {
     private:
-        int fixed_point_num;
-        static const int frac_bits;
+        int _fixed_point_num;
+        static const int _frac_bits;
     public:
         Fixed();
         Fixed(const Fixed& original);

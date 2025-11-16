@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 15:07:57 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/06 21:03:34 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/16 14:14:31 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,19 @@ Fixed::Fixed(const float f)
 /*copy constructor*/
 Fixed::Fixed(const Fixed& original)
 {
-    _fixedPointValue = original._fixedPointValue;
+    // _fixedPointValue = original._fixedPointValue;
     std::cout << "Copy constructor called" << std::endl;
+    *this = original;
 }
 
 /*copy assignment operator overload*/
 Fixed& Fixed::operator=(const Fixed& original)
 {
-    _fixedPointValue = original._fixedPointValue;
-    std::cout << "Copy assignment operator called" << std::endl;
+    if (this != &original)
+    {
+        _fixedPointValue = original._fixedPointValue;
+        std::cout << "Copy assignment operator called" << std::endl;
+    }
     return *this;
 }
 
@@ -53,7 +57,6 @@ Fixed::~Fixed()
 {
     std::cout << "Destructor called" << std::endl;
 }
-
 
 /*seters and geters*/
 int Fixed::getRawBits( void ) const
@@ -71,11 +74,11 @@ void Fixed::setRawBits( int const raw )
 
 float   Fixed::toFloat() const
 {
-    return static_cast<float>(_fixedPointValue)  / (1 << _fractionalBits);
+    return (float)(_fixedPointValue)  / (1 << _fractionalBits);
 }
 int     Fixed::toInt() const
 {
-    return static_cast<float>(_fixedPointValue  >> 8);
+    return (_fixedPointValue  >> _fractionalBits);
 }
 
 /*stream*/
