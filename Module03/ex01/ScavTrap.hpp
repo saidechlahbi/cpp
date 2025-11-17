@@ -24,7 +24,6 @@ class ScavTrap : public ClapTrap
         int _attack_damage;
     public:
             
-}
-
+};
 
 #endif /*SCAVTRAP.HPP*/
