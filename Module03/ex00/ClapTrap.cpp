@@ -12,11 +12,10 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
-    : _name("Unnamed"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+ClapTrap::ClapTrap(): _name("Unnamed"), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
-    std::cout << "ClapTrap " << _name << " constructed (HP=" << _hitPoints
-              << ", EP=" << _energyPoints << ", AD=" << _attackDamage << ")\n";
+    std::cout << "ClapTrap " << _name << " constructed (HP=" << _hit_points
+              << ", EP=" << _energy_points << ", AD=" << _attack_damage << ")\n";
 }
 
 ClapTrap::ClapTrap(std::string name): _name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
@@ -59,11 +58,12 @@ ClapTrap::~ClapTrap()
 /**/
 void ClapTrap::attack(const std::string& target)
 {
-    if (_energy_points == 0 || _hit_points == 0)
+    if (_energy_points <= 0 || _hit_points <= 0)
     {
         std::cout << "ClapTrac named " << _name << " can't attack" << std::endl;
         return ;
     }
+    _energy_points--;
     std::cout << "ClapTrap " << _name << " attacks " 
      << target <<  " causing " << _attack_damage<<  " points of damage!" << std::endl;
 
@@ -88,7 +88,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 }
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    if (_energy_points == 0 || _hit_points == 0)
+    if (_energy_points <= 0 || _hit_points <= 0)
     {
         std::cout <<"ClapTap named " << _name << " can't be repaired" << std::endl;
     }

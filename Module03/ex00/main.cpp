@@ -14,8 +14,9 @@
 
 int main()
 {
+    ClapTrap boo("boo");
     ClapTrap nemo("nemo");
-    nemo.attack("ahmed");
+    nemo.attack("boo");
     nemo.beRepaired(5);
     nemo.takeDamage(10);
 }
