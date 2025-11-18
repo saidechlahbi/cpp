@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP.HPP
-#define SCAVTRAP.HPP
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
 
@@ -23,6 +23,12 @@ class ScavTrap : public ClapTrap
         int _energy_points;
         int _attack_damage;
     public:
+        ScavTrap();
+        ScavTrap(std::string name);
+        ScavTrap(const ScavTrap& other);
+        ScavTrap& operator=(const ScavTrap& other);
+        ~ScavTrap();
+        void guardGate();
             
 };
 

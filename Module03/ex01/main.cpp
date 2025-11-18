@@ -11,12 +11,15 @@
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-    ClapTrap boo("boo");
-    ClapTrap nemo("nemo");
-    nemo.attack("boo");
-    nemo.beRepaired(5);
-    nemo.takeDamage(10);
+    ScavTrap scave("nemo");
+    scave.attack("boo");
+    // ClapTrap boo("boo");
+    // ClapTrap nemo("nemo");
+    // nemo.attack("boo");
+    // nemo.beRepaired(5);
+    // nemo.takeDamage(10);
 }
