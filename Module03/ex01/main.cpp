@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 15:37:24 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/12 21:23:09 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/19 21:53:10 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 
 int main()
 {
-    ScavTrap scave("nemo");
+    ScavTrap scave("nemo"), nemo;
+    nemo = scave;
     scave.attack("boo");
-    // ClapTrap boo("boo");
-    // ClapTrap nemo("nemo");
-    // nemo.attack("boo");
-    // nemo.beRepaired(5);
-    // nemo.takeDamage(10);
+    scave.beRepaired(5);
+    scave.takeDamage(10);
 }

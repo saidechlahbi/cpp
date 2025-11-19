@@ -1,31 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 21:29:42 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/19 22:17:28 by sechlahb         ###   ########.fr       */
+/*   Created: 2025/11/19 23:29:24 by sechlahb          #+#    #+#             */
+/*   Updated: 2025/11/19 23:29:25 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
-
-#include "ClapTrap.hpp"
-
-class FragTrap: public ClapTrap
-{
-    public:
-        FragTrap();
-        FragTrap(std::string name);
-        FragTrap(const FragTrap& other);
-        FragTrap& operator=(const FragTrap& other);
-        ~FragTrap();
-        
-        void attack(const std::string& target);
-        void highFivesGuys(void);
-};
-
-#endif /*FRAGTRAP_HPP*/
