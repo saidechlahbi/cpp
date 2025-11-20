@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(): _name("Unnamed"), _hit_points(10), _energy_points(10), _at
 
 ClapTrap::ClapTrap(std::string name): _name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
-    // std::cout << "The constructor is called" << std::endl;
+    std::cout << "The constructor is called" << std::endl;
     std::cout << "ClapTrap " << _name << " constructed (HP=" << _hit_points
     << ", EP=" << _energy_points << ", AD=" << _attack_damage << ")" << std::endl;;
 }
@@ -87,6 +87,7 @@ void ClapTrap::takeDamage(unsigned int amount)
     std::cout << "ClapTrap named " << _name 
     << " has taking  "<< amount << " damage!" << std::endl;
 }
+
 void ClapTrap::beRepaired(unsigned int amount)
 {
     if (_energy_points <= 0 || _hit_points <= 0)

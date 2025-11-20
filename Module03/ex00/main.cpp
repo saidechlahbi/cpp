@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sechlahb <sechlahb@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 15:37:24 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/12 21:23:09 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/20 14:00:30 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,5 @@ int main()
     nemo.attack("boo");
     nemo.beRepaired(5);
     nemo.takeDamage(10);
+    return 0;
 }
