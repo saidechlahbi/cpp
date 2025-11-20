@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,37 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal(): type("Animal")
+WrongAnimal::WrongAnimal(): type("WrongAnimal")
 {
-    std::cout << "The default constructer is called for Animal" << std::endl;
+    std::cout << "The default constructer is called for WrongAnimal" << std::endl;
 }
 
-Animal::Animal(const Animal& other):type(other.type)
+WrongAnimal::WrongAnimal(const WrongAnimal& other):type(other.type)
 {
-    std::cout << "Copy constructor is called for Animal" << std::endl;
+    std::cout << "Copy constructor is called for WrongAnimal" << std::endl;
 }
-Animal& Animal::operator=(const Animal& other)
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other)
 {
     if (this != &other)
     {
         type =  other.type;
     }
-    std::cout << "Copy assignment operator is called for Animal" << std::endl;
+    std::cout << "Copy assignment operator is called for WrongAnimal" << std::endl;
     return *this;
 }
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-    std::cout << "Animal is destroyed" << std::endl;
+    std::cout << "WrongAnimal is destroyed" << std::endl;
 }
 
-void Animal::makeSound() const
+void WrongAnimal::makeSound() const
 {
-    std::cout << "Animals don’t bark" << std::endl;
+    std::cout << "WrongAnimals don’t bark" << std::endl;
 }
 
-std::string Animal::getType() const
+std::string WrongAnimal::getType() const
 {
     return type;
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,35 +10,35 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat(): Animal(), brain(new Brain())
+WrongCat::WrongCat(): WrongAnimal()
 {
-    type = "Cat";
-    std::cout << "The default constructer is called for Cat" << std::endl;
+    type = "WrongCat";
+    std::cout << "The default constructer is called for WrongCat" << std::endl;
 }
 
-Cat::Cat(const Cat& other):Animal(other)
+WrongCat::WrongCat(const WrongCat& other):WrongAnimal(other)
 {
-    std::cout << "Copy constructor is called for Cat" << std::endl;
+    std::cout << "Copy constructor is called for WrongCat" << std::endl;
 }
 
-Cat& Cat::operator=(const Cat& other)
+WrongCat& WrongCat::operator=(const WrongCat& other)
 {
     if (this != &other)
     {
-        Animal::operator=(other);
+        WrongAnimal::operator=(other);
     }
-    std::cout << "Copy assignment operator is called for Cat" << std::endl;
+    std::cout << "Copy assignment operator is called for WrongCat" << std::endl;
     return *this;
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-    std::cout << "Cat is destroyed" << std::endl;
+    std::cout << "WrongCat is destroyed" << std::endl;
 }
 
-void Cat::makeSound() const
+void WrongCat::makeSound() const
 {
     std::cout << "Meow!" << std::endl;
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongDog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef WRONGDOG_HPP
+#define WRONGDOG_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
-class Dog: public Animal
+#include "WrongAnimal.hpp"
+
+class WrongDog: public WrongAnimal
 {
-    private:
-        Brain* table;
     public:
-        Dog();
-        Dog(const Dog& other);
-        Dog& operator=(const Dog& other);
-        virtual ~Dog();
+        WrongDog();
+        WrongDog(const WrongDog& other);
+        WrongDog& operator=(const WrongDog& other);
+        ~WrongDog();
         
-        virtual void makeSound() const;
+        void makeSound() const;
 };
 
-#endif /*DOG_HPP*/
+#endif /*WRONGDOG_HPP*/

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongDog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,35 +10,35 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongDog.hpp"
 
-Dog::Dog(): Animal()
+WrongDog::WrongDog(): WrongAnimal()
 {
-    type = "Dog";
-    std::cout << "The default constructer is called for Dog" << std::endl;
+    type = "WrongDog";
+    std::cout << "The default constructer is called for WrongDog" << std::endl;
 }
 
-Dog::Dog(const Dog& other):Animal(other)
+WrongDog::WrongDog(const WrongDog& other):WrongAnimal(other)
 {
-    std::cout << "Copy constructor is called for Dog" << std::endl;
+    std::cout << "Copy constructor is called for WrongDog" << std::endl;
 }
 
-Dog& Dog::operator=(const Dog& other)
+WrongDog& WrongDog::operator=(const WrongDog& other)
 {
     if (this != &other)
     {
-        Animal::operator=(other);
+        WrongAnimal::operator=(other);
     }
-    std::cout << "Copy assignment operator is called for Dog" << std::endl;
+    std::cout << "Copy assignment operator is called for WrongDog" << std::endl;
     return *this;
 }
 
-Dog::~Dog()
+WrongDog::~WrongDog()
 {
-    std::cout << "Dog is destroyed" << std::endl;
+    std::cout << "WrongDog is destroyed" << std::endl;
 }
 
-void Dog::makeSound() const
+void WrongDog::makeSound() const
 {
     std::cout << "Woof!" << std::endl;
 }
