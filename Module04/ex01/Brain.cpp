@@ -20,7 +20,9 @@ Brain& Brain::operator=(const Brain& other)
             ideas[i] = other.ideas[i];
     }
     std::cout << "Copy operator assignment of brain is called" << std::endl;
+    return *this;
 }
+
 Brain::~Brain()
 {
     std::cout << "Destructor of brain is called" << std::endl;

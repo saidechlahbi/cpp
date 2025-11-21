@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 23:29:15 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/21 15:34:42 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/21 16:19:50 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Cat: public Animal
 {
     private:
-        Brain* ideas;
+        Brain* brain;
     public:
         Cat();
         Cat(const Cat& other);

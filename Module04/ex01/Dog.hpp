@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 23:29:21 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/21 15:34:48 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/21 16:18:57 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Dog: public Animal
 {
     private:
-        Brain* ideas;
+        Brain* brain;
     public:
         Dog();
         Dog(const Dog& other);
