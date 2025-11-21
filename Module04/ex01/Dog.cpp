@@ -6,13 +6,13 @@
 /*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 23:29:18 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/19 23:29:19 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/21 15:37:52 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(): Animal()
+Dog::Dog(): Animal() ,brain(new Brain())
 {
     type = "Dog";
     std::cout << "The default constructer is called for Dog" << std::endl;
@@ -35,6 +35,7 @@ Dog& Dog::operator=(const Dog& other)
 
 Dog::~Dog()
 {
+    delete ideas;
     std::cout << "Dog is destroyed" << std::endl;
 }
 
