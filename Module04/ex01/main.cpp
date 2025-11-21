@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 23:29:24 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/21 17:11:31 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/21 17:19:00 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main()
     {
         if (i < n/2)
             zoo[i] = new Dog();
-        else
+        else    
             zoo[i] = new Cat();
     }
 
