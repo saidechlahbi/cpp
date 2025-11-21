@@ -9,7 +9,7 @@ Brain::Brain()
 Brain::Brain(const Brain& other)
 {
     for (int i = 0; i < 100; i++)
-        ideas[i] = other.ideas[100];
+        ideas[i] = other.ideas[i];
     std::cout << "Copy constructor of brain is called" << std::endl;
 }
 Brain& Brain::operator=(const Brain& other)
