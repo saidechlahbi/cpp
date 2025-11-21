@@ -6,22 +6,38 @@
 /*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 23:29:24 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/21 16:40:36 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/21 17:11:31 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "Animal.hpp"
+
 int main()
 {
-    // const Animal* j = new Dog();
-    // const Animal* i = new Cat();
-    // j->makeSound();
-    // i->makeSound();
-    Cat a,b;
-    a = b;
-    // delete j;
-    // delete i;
+    int n = 6;
+    Animal* zoo[n];
+
+    for (int i = 0; i < n; ++i)
+    {
+        if (i < n/2)
+            zoo[i] = new Dog();
+        else
+            zoo[i] = new Cat();
+    }
+
+    std::cout << "-- make sounds --" << std::endl;
+    for (int i = 0; i < n; ++i)
+        zoo[i]->makeSound();
+
+    std::cout << "-- delete all via base pointer (must call derived dtors) --" << std::endl;
+    for (int i = 0; i < n; ++i)
+        delete zoo[i];
+
+    std::cout << "\n-- deep copy test --\n";
+    Dog d1;
+    Dog d2 = d1;
+    d1 = d2;
     return 0;
 }
