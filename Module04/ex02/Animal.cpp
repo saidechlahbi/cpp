@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 23:29:08 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/21 17:27:45 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/23 22:02:40 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,6 @@ Animal::~Animal()
 {
     std::cout << "Animal is destroyed" << std::endl;
 }
-
-// void Animal::makeSound() const
-// {
-//     std::cout << "Animals don’t bark" << std::endl;
-// }
 
 std::string Animal::getType() const
 {

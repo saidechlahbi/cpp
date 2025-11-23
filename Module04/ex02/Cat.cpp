@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 23:29:13 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/21 17:25:12 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/23 21:50:01 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Cat::Cat(): Animal(), brain(new Brain())
 
 Cat::Cat(const Cat& other):Animal(other)
 {
-    type = other.type;
     if (other.brain)
         brain = new Brain(*other.brain);
     else
@@ -39,7 +38,6 @@ Cat& Cat::operator=(const Cat& other)
             brain = new Brain(*other.brain);
         else
             brain = NULL;
-        type = other.type;
     }
     std::cout << "Copy assignment operator is called for Cat" << std::endl;
     return *this;

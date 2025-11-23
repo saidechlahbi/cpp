@@ -6,20 +6,18 @@
 /*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 23:29:24 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/21 17:19:00 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/23 22:08:54 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "MateriaSource.hpp"
-#include "IMateriasource.hpp"
+#include "IMateriaSource.hpp"
 #include "ICharacter.hpp"
 #include "Character.hpp"
 #include "AMateria.hpp"
 #include "Cure.hpp"
 #include "Ice.hpp"
     
-
 int main()
 {
     IMateriaSource* src = new MateriaSource();

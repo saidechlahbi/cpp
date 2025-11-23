@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/23 22:08:06 by sechlahb          #+#    #+#             */
+/*   Updated: 2025/11/23 22:08:06 by sechlahb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ICHARACTER_HPP
 #define ICHARACTER_HPP
 
 #include "AMateria.hpp"
-class AMateria;
+
 class ICharacter
 {
     public:

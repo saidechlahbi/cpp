@@ -6,7 +6,7 @@
 /*   By: sechlahb <sechlahb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 23:29:08 by sechlahb          #+#    #+#             */
-/*   Updated: 2025/11/19 23:29:09 by sechlahb         ###   ########.fr       */
+/*   Updated: 2025/11/23 22:01:32 by sechlahb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Animal::~Animal()
 
 void Animal::makeSound() const
 {
-    std::cout << "Animals don’t bark" << std::endl;
+    std::cout << "Animals don't bark" << std::endl;
 }
 
 std::string Animal::getType() const
