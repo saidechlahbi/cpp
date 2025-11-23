@@ -11,12 +11,13 @@
 /* ************************************************************************** */
 
 
-#include "AMateria.hpp"
+#include "MateriaSource.hpp"
 #include "IMateriasource.hpp"
 #include "ICharacter.hpp"
+#include "Character.hpp"
+#include "AMateria.hpp"
 #include "Cure.hpp"
 #include "Ice.hpp"
-#include "MateriaSource.hpp"
 
 int main()
 {

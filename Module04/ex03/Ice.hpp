@@ -9,10 +9,11 @@ class Ice: public AMateria{
         Ice();
         Ice(const Ice& other);
         Ice& operator=(const Ice& other);
-        ~Ice();
+        virtual ~Ice();
         
-        virtual AMateria* clone() const
-}
+        virtual AMateria* clone() const;
+        virtual void use(ICharacter& target);
+};
 
 
 #endif /* ICE_HPP */
