@@ -7,8 +7,8 @@ class Character: public ICharacter
 {
         AMateria* _inventory[4];
         AMateria * collector[1000];
-        int pos;
         std::string _name;
+        int pos;
     public:
         Character();
         Character(std::string name);

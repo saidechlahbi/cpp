@@ -1,7 +1,9 @@
 #ifndef AMATERIASOURCE_HPP
 #define AMATERIASOURCE_HPP
 
-#include "AMateria.hpp"
+// #include "AMateria.hpp"
+class AMateria;
+
 
 class IMateriaSource
 {
