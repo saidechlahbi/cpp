@@ -1,45 +1,61 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(std::string name, int grade):_name(name), _grade(grade)
+/*orthodox canonical form*/
+Bureaucrat::Bureaucrat(): _name("default"), _grade(150) {}
+
+Bureaucrat::Bureaucrat(const Bureaucrat& other): _name(other._name), _grade(other._grade){}
+
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)
 {
-    if (grade > 150)    
-        throw 
-    if (grade < 1)
-        throw
+    if (&other != this)
+    {
+        /*_name is const, so we can't assign it.*/
+        this->_grade = other._grade;
+    }
+    return (*this);
+
 }
 
-Bureaucrat::~Bureaucrat()
-{
+Bureaucrat::~Bureaucrat() {}
 
+
+/*exception classes*/
+
+const char * Bureaucrat::GradeTooHighException::what() const throw()
+{
+    return ("Grade Too High Exception");
 }
 
-std::string Bureaucrat::getName()
+const char * Bureaucrat::GradeTooLowException::what() const throw()
+{
+    return ("Grade Too Low Exception");
+}
+
+
+/*getters*/
+std::string Bureaucrat::getName() const
 {
     return _name;
 }
-
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
     return _grade;
 }
 
-void Bureaucrat::setName(std::string name)
-{
-    _name = name;
-}
-void Bureaucrat::setGrade(int grade)
-{
-    _grade = grade;
-}
-
+/*increment and decrement the grade*/
 void Bureaucrat::incrementgrade()
 {
-    _grade++;
-}
-void Bureaucrat::decrimentgrade()
-{
+    if (_grade == 1)
+    {
+        throw GradeTooHighException();
+    }
     _grade--;
 }
-
-void Bureaucrat::GradeTooHighException();
-void Bureaucrat::GradeTooLowException();
+void Bureaucrat::decrementgrade()
+{
+    if (_grade == 150)
+    {
+        throw GradeTooLowException();
+    }
+    _grade++;
+}

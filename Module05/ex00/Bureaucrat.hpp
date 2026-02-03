@@ -13,20 +13,33 @@ class Bureaucrat
         const std::string _name;
         int _grade;
     public:
-        Bureaucrat(std::string name, int grade);
+        /*orthodox canonical form*/
+        Bureaucrat();
+        Bureaucrat(const Bureaucrat &other);
+        Bureaucrat &operator=(const Bureaucrat &other);
         ~Bureaucrat();
+    
+        /*exception classes*/
+        class GradeTooHighException : public std::exception
+        {
+            public:
+            const char* what() const throw();
+        };
 
-        std::string getName();
-        int getGrade();
+        class GradeTooLowException :public std::exception
+        {
+            public:
+            const char* what() const throw();
+        };
 
-        void setName(std::string name);
-        void setGrade(int grade);
+        /*getters*/
+        std::string getName() const;
+        int getGrade() const;
 
+        /*increment and decrement the grade*/
         void incrementgrade();
-        void decrimentgrade();
+        void decrementgrade();
 
-        void GradeTooHighException();
-        void GradeTooLowException();
 };
 
 #endif /* BUREAUCRAT_HPP */
