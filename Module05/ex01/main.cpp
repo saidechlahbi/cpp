@@ -1,48 +1,35 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-int main() 
+#include "Bureaucrat.hpp"
+#include "Form.hpp"
+
+int main()
 {
-    std::cout << "--- Test 1: Valid Bureaucrat ---" << std::endl;
-    try {
-        Bureaucrat bob("Bob", 2);
-        std::cout << bob << std::endl;
-        bob.incrementgrade();
-        std::cout << "After increment: " << bob << std::endl;
-        bob.decrementgrade();
-        std::cout << "After decrement: " << bob << std::endl;
-    } catch (std::exception &e) {
-        std::cerr << e.what() << std::endl;
+    try 
+    {
+        Bureaucrat b1("John", 2);
+        Bureaucrat b2("Intern", 140);
+        Form f1("Tax Form", 20, 45);
+        Form f2("Presidential Pardon", 1, 1);
+
+        std::cout << b1 << b2 << f1 << std::endl << f2 << std::endl;
+
+        std::cout << "--- Test 1: Successful sign ---" << std::endl;
+        b1.signForm(f1);
+        std::cout << f1 << std::endl;
+
+        std::cout << "\n--- Test 2: Grade too low to sign ---" << std::endl;
+        b2.signForm(f2);
+        std::cout << f2 << std::endl;
+
+        std::cout << "\n--- Test 3: Create form with invalid grade ---" << std::endl;
+        Form f3("Impossible", 0, 150);
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << "Caught exception: " << e.what() << std::endl;
     }
 
-    std::cout << "\n--- Test 2: Grade Too High in Constructor ---" << std::endl;
-    try {
-        Bureaucrat high("High", 0);
-    } catch (std::exception &e) {
-        std::cerr << "Caught: " << e.what() << std::endl;
-    }
-
-    std::cout << "\n--- Test 3: Grade Too Low in Constructor ---" << std::endl;
-    try {
-        Bureaucrat low("Low", 151);
-    } catch (std::exception &e) {
-        std::cerr << "Caught: " << e.what() << std::endl;
-    }
-
-    std::cout << "\n--- Test 4: Increment Violation ---" << std::endl;
-    try {
-        Bureaucrat boss("Boss", 1);
-        std::cout << boss << std::endl;
-        boss.incrementgrade();
-    } catch (std::exception &e) {
-        std::cerr << "Caught: " << e.what() << std::endl;
-    }
-
-    std::cout << "\n--- Test 5: Decrement Violation ---" << std::endl;
-    try {
-        Bureaucrat lazy("Lazy", 150);
-        std::cout << lazy << std::endl;
-        lazy.decrementgrade();
-    } catch (std::exception &e) {
-        std::cerr << "Caught: " << e.what() << std::endl;
-    }
+    return 0;
 }

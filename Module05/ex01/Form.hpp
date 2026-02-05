@@ -30,15 +30,14 @@ class Form
         };
 
         /*methods*/
-        void beSigned(Bureaucrat boss);
-        void signForm();
-
+        void beSigned(Bureaucrat& boss);
         /*getters*/
-        const std::string getName() const;
+        std::string getName() const;
         bool getSignature() const;
-        const int getRequireGrade() const;
-        const int getExecuteGrade() const;
+        int getRequireGrade() const;
+        int getExecuteGrade() const;
 };
 std::ostream &operator<<(std::ostream &out, const Form& f);
+
 
 #endif /*FORM_HPP*/

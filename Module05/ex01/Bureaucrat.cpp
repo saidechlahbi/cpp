@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 /*orthodox canonical form*/
 Bureaucrat::Bureaucrat(): _name("default"), _grade(150) {}
@@ -15,7 +16,6 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)
         this->_grade = other._grade;
     }
     return (*this);
-
 }
 
 Bureaucrat::~Bureaucrat() {}
@@ -52,6 +52,19 @@ void Bureaucrat::incrementgrade()
         throw GradeTooHighException();
     }
     _grade--;
+}
+
+void Bureaucrat::signForm(Form &f)
+{
+    try 
+    {
+        f.beSigned(*this);
+        std::cout << _name << " signed " << f.getName() << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << _name << " couldn't sign " << f.getName() << " because " << e.what() << "." << std::endl;
+    }
 }
 void Bureaucrat::decrementgrade()
 {
