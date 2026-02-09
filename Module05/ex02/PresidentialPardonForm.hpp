@@ -13,6 +13,7 @@ class PresidentialPardonForm: public AForm
         PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
         ~PresidentialPardonForm();
         void beSigned(Bureaucrat& boss);
+        void execute(Bureaucrat const & executor) const;
 };
 
 #endif /*PRESIDENTIALPARDONFORM_HPP*/

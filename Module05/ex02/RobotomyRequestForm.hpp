@@ -12,6 +12,7 @@ class RobotomyRequestForm: public AForm
         RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
         ~RobotomyRequestForm();
         void beSigned(Bureaucrat& boss);
+        void execute(Bureaucrat const & executor) const;
 };
 
 #endif /*ROBOTOMYREQUESTFORM_HPP*/ 

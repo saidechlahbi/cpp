@@ -39,6 +39,7 @@ std::string Bureaucrat::getName() const
 {
     return _name;
 }
+
 int Bureaucrat::getGrade() const
 {
     return _grade;
@@ -54,6 +55,15 @@ void Bureaucrat::incrementgrade()
     _grade--;
 }
 
+void Bureaucrat::decrementgrade()
+{
+    if (_grade == 150)
+    {
+        throw GradeTooLowException();
+    }
+    _grade++;
+}
+
 void Bureaucrat::signForm(Form &f)
 {
     try 
@@ -66,14 +76,7 @@ void Bureaucrat::signForm(Form &f)
         std::cout << _name << " couldn't sign " << f.getName() << " because " << e.what() << "." << std::endl;
     }
 }
-void Bureaucrat::decrementgrade()
-{
-    if (_grade == 150)
-    {
-        throw GradeTooLowException();
-    }
-    _grade++;
-}
+
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &b)
 {

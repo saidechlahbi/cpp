@@ -8,6 +8,7 @@
 #include <exception>
 
 class Form ;
+class AForm ;
 class Bureaucrat
 {
     private:
@@ -34,6 +35,9 @@ class Bureaucrat
             const char* what() const throw();
         };
 
+        /*methods*/
+        void executeForm(AForm const & form) const; // choud code it hhhhhhhhhhh
+        
         /*getters*/
         std::string getName() const;
         int getGrade() const;

@@ -51,6 +51,15 @@ const char* AForm::GradeTooLowException::what() const throw() {
     return "Grade too low";
 }
 
+    /*methods*/
+void AForm::beSigned(Bureaucrat& boss)
+{
+    if (boss.getGrade() >= _requireGrade)
+        _signature = true;
+    else
+        throw AForm::GradeTooLowException();
+}
+
 /*overload the insertion («) operator*/
 std::ostream &operator<<(std::ostream &out, const AForm& f)
 {

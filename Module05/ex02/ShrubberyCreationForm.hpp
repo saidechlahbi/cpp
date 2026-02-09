@@ -14,6 +14,7 @@ class ShrubberyCreationForm: public AForm
         ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
         ~ShrubberyCreationForm();
         void beSigned(Bureaucrat& boss);
+        void execute(Bureaucrat const & executor) const;
 };
 
 #endif /*SHRUBBERYCREATIONFORM_HPP*/

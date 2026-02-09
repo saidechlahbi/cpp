@@ -31,7 +31,9 @@ class AForm
         };
 
         /*methods*/
-        virtual void beSigned(Bureaucrat& boss) = 0;
+        void beSigned(Bureaucrat& boss);
+        virtual void execute(Bureaucrat const & executor) const = 0;
+
         /*getters*/
         std::string getName() const;
         bool getSignature() const;
