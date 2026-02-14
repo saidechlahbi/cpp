@@ -30,6 +30,11 @@ class AForm
             const char* what() const throw();
         };
 
+        class NotSignedException :public std::exception
+        {
+            public:
+            const char *what() const throw();
+        };
         /*methods*/
         void beSigned(Bureaucrat& boss);
         virtual void execute(Bureaucrat const & executor) const = 0;
