@@ -7,7 +7,6 @@
 #include <iostream>
 #include <exception>
 
-class Form ;
 class AForm ;
 class Bureaucrat
 {
@@ -17,7 +16,7 @@ class Bureaucrat
     public:
         /*orthodox canonical form*/
         Bureaucrat();
-         Bureaucrat(const std::string name, int grade);
+        Bureaucrat(const std::string name, int grade);
         Bureaucrat(const Bureaucrat &other);
         Bureaucrat &operator=(const Bureaucrat &other);
         ~Bureaucrat();
@@ -36,7 +35,7 @@ class Bureaucrat
         };
 
         /*methods*/
-        void executeForm(AForm const & form) const; // choud code it hhhhhhhhhhh
+        void executeForm(AForm const & form) const;
         
         /*getters*/
         std::string getName() const;
@@ -46,7 +45,7 @@ class Bureaucrat
         void incrementgrade();
         void decrementgrade();
 
-        void signForm(Form &f);
+        void signForm(AForm &f);
 
 };
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &b);

@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 /*orthodox canonical form*/
 Bureaucrat::Bureaucrat(): _name("default"), _grade(150) {}
@@ -64,7 +64,7 @@ void Bureaucrat::decrementgrade()
     _grade++;
 }
 
-void Bureaucrat::signForm(Form &f)
+void Bureaucrat::signForm(AForm &f)
 {
     try 
     {
@@ -78,6 +78,20 @@ void Bureaucrat::signForm(Form &f)
 }
 
 
+void Bureaucrat::executeForm(AForm const & form) const
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << _name <<  " executed " << form.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << _name << " couldn't execute " << std::endl;
+        // std::cerr << e.what() << '\n';
+    }
+    
+}
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &b)
 {
     out << b.getName() << ", Bureaucrat grade " << b.getGrade() << "." << std::endl;

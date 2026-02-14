@@ -13,7 +13,6 @@ class ShrubberyCreationForm: public AForm
         ShrubberyCreationForm(const ShrubberyCreationForm &other);
         ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
         ~ShrubberyCreationForm();
-        void beSigned(Bureaucrat& boss);
         void execute(Bureaucrat const & executor) const;
 };
 

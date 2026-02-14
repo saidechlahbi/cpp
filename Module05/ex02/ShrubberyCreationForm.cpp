@@ -15,13 +15,6 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 ShrubberyCreationForm::~ShrubberyCreationForm(){}
 
-void ShrubberyCreationForm::beSigned(Bureaucrat& boss)
-{
-    if (boss.getGrade() >= _requireGrade)
-        _signature = true;
-    else
-        throw AForm::GradeTooLowException();
-}
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
