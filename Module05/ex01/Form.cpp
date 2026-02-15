@@ -29,7 +29,7 @@ Form::~Form(){}
 /*methods*/
 void Form::beSigned(Bureaucrat& boss)
 {
-    if (boss.getGrade() >= _requireGrade)
+    if (boss.getGrade() <= _requireGrade)
         _signature = true;
     else
         throw Form::GradeTooLowException();
@@ -64,7 +64,7 @@ const char* Form::GradeTooLowException::what() const throw() {
 std::ostream &operator<<(std::ostream &out, const Form& f)
 {
     std::string s;
-    if (f.getRequireGrade())
+    if (f.getSignature())
         s = " signed";
     else
         s = " unsigned";
