@@ -12,6 +12,10 @@ class Intern
         Intern* operator=(const Intern *other);
         ~Intern();
         AForm* makeForm(std::string form_name, std::string form_target);
+        // private:
+        AForm *createShrubberyForm(std::string target);
+        AForm *createRobotomyRequestForm(std::string target);
+        AForm *createPresidentialPardonForm(std::string target);
 };
 
 #endif /*INTERN_HPP*/
