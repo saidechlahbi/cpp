@@ -7,7 +7,7 @@ SRC =  main.cpp ScalarConverter.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-all: $(NAME) clean
+all: $(NAME) 
 
 $(NAME): $(OBJ) 
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)

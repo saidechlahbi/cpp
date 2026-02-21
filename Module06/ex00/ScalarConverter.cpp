@@ -1,6 +1,8 @@
 #include "ScalarConverter.hpp"
 #include <cmath>
 #include <iomanip>
+#include <limits>
+
 ScalarConverter::ScalarConverter(){}
 ScalarConverter::ScalarConverter(const ScalarConverter& other)
 {
@@ -28,7 +30,9 @@ void ScalarConverter::convert(std::string input)
         else
             std::cout << "char: '" << static_cast<char>(value) << "'" << std::endl;
 
-        if (std::isinf(value) || std::isnan(value))
+        if (std::isinf(value) || std::isnan(value)  
+            || value > std::numeric_limits<int>::max() 
+            || value < std::numeric_limits<int>::min())
             std::cout << "int: impossible" << std::endl;
         else
             std::cout << "int: " << static_cast<int>(value) << std::endl;
