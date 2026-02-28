@@ -3,8 +3,9 @@
 
 #include <iostream>
 #include "Data.hpp"
+#include  <stdint.h>
+class Data;
 
-#include <cstdint>
 
 class Serializer
 {

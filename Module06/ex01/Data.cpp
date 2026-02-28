@@ -1,12 +1,19 @@
 #include "Data.hpp"
 
+Data::Data() : name(""), value(0) {}
 
-Data::Data(){}
-Data::Data(const Data &other){
-    (void)other;
-}
-Data& Data::operator=(const Data& other){
-    (void)other;
+Data::Data(std::string n, int v) : name(n), value(v) {}
+
+Data::Data(const Data& other) : name(other.name), value(other.value) {}
+
+Data& Data::operator=(const Data& other)
+{
+    if (this != &other)
+    {
+        name = other.name;
+        value = other.value;
+    }
     return *this;
 }
-Data::~Data(){}
+
+Data::~Data() {}

@@ -5,12 +5,15 @@
 
 class Data
 {
-    private:
+    public:
+        std::string name;
+        int value;
+        
         Data();
-        Data(const Data &other);
+        Data(std::string n, int v);
+        Data(const Data& other);
         Data& operator=(const Data& other);
         ~Data();
-        
 };
 
 
