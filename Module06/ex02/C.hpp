@@ -1,14 +1,11 @@
-#ifndef BASE_HPP 
-#define BASE_HPP
+#ifndef C_HPP 
+#define C_HPP
 
+#include "Base.hpp"
 
-class Base
+class C: public Base
 {
-    protected:
-        Base();
-        Base(const Base& other);
-        Base& operator=(const Base& other);
-        virtual ~Base();
+
 };
 
-#endif /*BASE_HPP*/
+#endif /*C_HPP*/
