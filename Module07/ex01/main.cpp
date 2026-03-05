@@ -1,7 +1,18 @@
 #include "iter.hpp"
 
+template <class T>
+void printElement(T x)
+{
+    std::cout << x << "\t";
+}
+
 int main ()
 {
-    int array1[] = {1, 4, 5, 7};
-    
+    const int array1[] = {1, 4, 5, 7};
+    iter(array1, 4, printElement<const int>);
+    std::cout << std::endl;
+
+    int array2[] = {44, 42, 57, 76};
+    iter(array2, 4, printElement<int>);
+    std::cout << std::endl;
 }
