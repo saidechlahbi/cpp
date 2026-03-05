@@ -6,7 +6,7 @@
 template <class T>
 T min(T a, T b)
 {
-    if (a > b)
+    if (a >= b)
         return b;
     else
         return a;
@@ -22,11 +22,11 @@ T max(T a, T b)
 }
 
 template <class T>
-void swap(T *a, T *b)
+void swap(T &a, T &b)
 {
-   T c = *a;
-   *a = *b;
-   *b = c;
+   T c = a;
+   a = b;
+   b = c;
 }
 
 #endif /*WHATEVER_HPP*/
