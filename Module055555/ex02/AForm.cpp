@@ -1,11 +1,11 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 
 #include "Bureaucrat.hpp" 
 
 /*orthodox canonical form*/
-Form::Form():_name("unknown"), _sign_state(false), _require_grade_to_sign(1), _require_grade_to_execute(1){}
+AForm::AForm():_name("unknown"), _sign_state(false), _require_grade_to_sign(1), _require_grade_to_execute(1){}
 
-Form::Form(const std::string n, const int rgs, const int rge):
+AForm::AForm(const std::string n, const int rgs, const int rge):
     _name(n), _sign_state(false), _require_grade_to_sign(rgs), _require_grade_to_execute(rge)
 {
     if (_require_grade_to_sign < 1 || _require_grade_to_execute < 1)
@@ -14,10 +14,10 @@ Form::Form(const std::string n, const int rgs, const int rge):
         throw GradeTooLowException();
 }
 
-Form::Form(const Form& other): 
+AForm::AForm(const AForm& other): 
     _name(other._name), _sign_state(other._sign_state), _require_grade_to_sign(other._require_grade_to_sign), _require_grade_to_execute(other._require_grade_to_execute){}
 
-Form& Form::operator=(const Form& other)
+AForm& AForm::operator=(const AForm& other)
 {
     if (this != &other)
     {
@@ -26,19 +26,19 @@ Form& Form::operator=(const Form& other)
     return *this;
 }
 
-Form::~Form(){}
+AForm::~AForm(){}
 
-const char* Form::GradeTooHighException::what() const throw()
+const char* AForm::GradeTooHighException::what() const throw()
 {
-    return "Form: Grade Too High Exception ";
+    return "AForm: Grade Too High Exception ";
 }
 
-const char* Form::GradeTooLowException::what() const throw()
+const char* AForm::GradeTooLowException::what() const throw()
 {
-    return "Form: Grade Too Low Exception";
+    return "AForm: Grade Too Low Exception";
 }
 
-void Form::beSigned(Bureaucrat &b)
+void AForm::beSigned(Bureaucrat &b)
 {
     if (b.getGrade() <= _require_grade_to_sign)
     {
@@ -50,32 +50,32 @@ void Form::beSigned(Bureaucrat &b)
     }
 }
 
-std::string Form::getName() const
+std::string AForm::getName() const
 {
     return _name;
 }
-bool Form::getSignState() const
+bool AForm::getSignState() const
 {
     return _sign_state;
 }
- int Form::getRequireGradeToSign() const
+ int AForm::getRequireGradeToSign() const
 {
     return _require_grade_to_sign;
 }
- int Form::getRequireGradeToExecute() const
+ int AForm::getRequireGradeToExecute() const
 {
     return _require_grade_to_execute;
 }
 
 /*overload the insertion («) operator*/
-std::ostream &operator<<(std::ostream &out, const Form& f)
+std::ostream &operator<<(std::ostream &out, const AForm& f)
 {
     std::string s;
     if (f.getSignState())
         s = " signed";
     else
         s = " unsigned";
-    out << "Form named " << f.getName() << s << ", sign grade " << f.getRequireGradeToSign()
+    out << "AForm named " << f.getName() << s << ", sign grade " << f.getRequireGradeToSign()
         << ", execute grade " << f.getRequireGradeToExecute() << "." << std::endl;
     return out;
 }

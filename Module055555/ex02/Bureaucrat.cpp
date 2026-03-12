@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 /*orthodox canonical form*/
 
 Bureaucrat::Bureaucrat(): _name("unknown"), _grade(150) {}
@@ -62,7 +62,7 @@ std::ostream &operator<<(std::ostream &out, const Bureaucrat &b)
     return out;
 }
 
-void Bureaucrat::signForm(Form& f)
+void Bureaucrat::signForm(AForm& f)
 {
     try
     {
@@ -74,5 +74,9 @@ void Bureaucrat::signForm(Form& f)
     {
         std::cout << _name << " couldn't sign " << f.getName() << " because " << e.what() << "." << std::endl;
     }
+}
+
+void Bureaucrat::executeForm(AForm const & form)
+{
     
 }
