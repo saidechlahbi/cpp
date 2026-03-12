@@ -4,7 +4,7 @@
 #include "PresidentialPardonForm.hpp"
 
 Intern::Intern(){}
-Intern::Intern(const Intern* other)
+Intern::Intern(const Intern& other)
 {
     (void)other;
 }

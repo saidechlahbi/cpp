@@ -18,13 +18,12 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 ShrubberyCreationForm::~ShrubberyCreationForm(){}
 
-
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-    if (this->_signature == false)
+    if (this->_sign_state == false)
         throw AForm::NotSignedException();
     
-    if (executor.getGrade() > this->_execute_grade)
+    if (executor.getGrade() > this->_require_grade_to_execute)
         throw AForm::GradeTooLowException();
         
     std::string filename = this->_target + "_shrubbery";
