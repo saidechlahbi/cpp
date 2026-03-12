@@ -12,7 +12,7 @@ Bureaucrat::Bureaucrat(std::string name , int grade): _name(name), _grade(0)
     _grade = grade;
 }
 Bureaucrat::Bureaucrat(const Bureaucrat& other):_name(other._name), _grade (other._grade) {}
-Bureaucrat& Bureaucrat::operatoo(const Bureaucrat& other)
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
     if (this != &other)
     {
@@ -78,5 +78,14 @@ void Bureaucrat::signForm(AForm& f)
 
 void Bureaucrat::executeForm(AForm const & form)
 {
-    
+    try
+    {
+        form.execute(*this);
+        std::cout << _name <<  " executed " << form.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << _name << " couldn't execute the form CS" << std::endl;
+        std::cout << e.what() << std::endl;
+    }
 }

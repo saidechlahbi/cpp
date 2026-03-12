@@ -28,8 +28,8 @@ int main()
         
         std::cout << "\n=== Failed Execution Test ===" << std::endl;
         ShrubberyCreationForm shrub2("garden");
-        intern.signForm(shrub2);  // Will fail
-        intern.executeForm(shrub2);  // Will fail
+        intern.signForm(shrub2);
+        intern.executeForm(shrub2);
     }
     catch (std::exception &e)
     {
