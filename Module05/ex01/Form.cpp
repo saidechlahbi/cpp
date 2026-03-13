@@ -1,74 +1,81 @@
 #include "Form.hpp"
-#include "Bureaucrat.hpp" 
-    /*orthodox canonical form*/
-Form::Form(): _name("default"), _signature(false), _requireGrade(150), _execute_grade(150){}
 
-Form::Form(const std::string name, const int sign_grade, const int execute_grade):
-     _name(name), _signature(false), _requireGrade(sign_grade), _execute_grade(execute_grade)
+#include "Bureaucrat.hpp" 
+
+/*orthodox canonical form*/
+Form::Form():_name("unknown"), _sign_state(false), _require_grade_to_sign(1), _require_grade_to_execute(1){}
+
+Form::Form(const std::string n, const int rgs, const int rge):
+    _name(n), _sign_state(false), _require_grade_to_sign(rgs), _require_grade_to_execute(rge)
 {
-    if (_requireGrade < 1 || _execute_grade < 1 )
-        throw Form::GradeTooHighException();
-    if (_requireGrade > 150 || _execute_grade > 150 )
-        throw Form::GradeTooLowException();
+    if (_require_grade_to_sign < 1 || _require_grade_to_execute < 1)
+        throw GradeTooHighException();
+    if (_require_grade_to_sign > 150 || _require_grade_to_execute > 150)
+        throw GradeTooLowException();
 }
 
-Form::Form(const Form& other):
-    _name(other._name), _signature(other._signature), _requireGrade(other._requireGrade), _execute_grade(other._execute_grade) {}
+Form::Form(const Form& other): 
+    _name(other._name), _sign_state(other._sign_state), _require_grade_to_sign(other._require_grade_to_sign), _require_grade_to_execute(other._require_grade_to_execute){}
 
 Form& Form::operator=(const Form& other)
 {
     if (this != &other)
     {
-        this->_signature = other._signature;
+        _sign_state = other._sign_state;
     }
     return *this;
 }
+
 Form::~Form(){}
 
-
-/*methods*/
-void Form::beSigned(Bureaucrat& boss)
+const char* Form::GradeTooHighException::what() const throw()
 {
-    if (boss.getGrade() <= _requireGrade)
-        _signature = true;
-    else
-        throw Form::GradeTooLowException();
+    return "Form: Grade Too High Exception ";
 }
 
-/*getters*/
- std::string Form::getName() const
+const char* Form::GradeTooLowException::what() const throw()
+{
+    return "Form: Grade Too Low Exception";
+}
+
+void Form::beSigned(Bureaucrat &b)
+{
+    if (b.getGrade() <= _require_grade_to_sign)
+    {
+        _sign_state = true;
+    }
+    else
+    {
+        throw GradeTooLowException();
+    }
+}
+
+std::string Form::getName() const
 {
     return _name;
 }
-bool Form::getSignature() const
+bool Form::getSignState() const
 {
-    return _signature;
+    return _sign_state;
 }
- int Form::getRequireGrade() const
+ int Form::getRequireGradeToSign() const
 {
-    return _requireGrade;
+    return _require_grade_to_sign;
 }
- int Form::getExecuteGrade() const
+ int Form::getRequireGradeToExecute() const
 {
-    return _execute_grade;
-}
-const char* Form::GradeTooHighException::what() const throw() {
-    return "Grade too high";
-}
-
-const char* Form::GradeTooLowException::what() const throw() {
-    return "Grade too low";
+    return _require_grade_to_execute;
 }
 
 /*overload the insertion («) operator*/
 std::ostream &operator<<(std::ostream &out, const Form& f)
 {
     std::string s;
-    if (f.getSignature())
+    if (f.getSignState())
         s = " signed";
     else
         s = " unsigned";
-    out << "Form named " << f.getName() << s << ", sign grade " << f.getRequireGrade()
-        << ", execute grade " << f.getExecuteGrade() << "." << std::endl;
+    out << "Form named " << f.getName() << s << ", sign grade " << f.getRequireGradeToSign()
+        << ", execute grade " << f.getRequireGradeToExecute() << "." << std::endl;
     return out;
 }

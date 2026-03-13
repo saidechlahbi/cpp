@@ -2,6 +2,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
@@ -28,6 +29,15 @@ int main()
         
         std::cout << "\n=== Failed Execution Test ===" << std::endl;
         ShrubberyCreationForm shrub2("garden");
+        Intern someIntern;
+        AForm *f1 = someIntern.makeForm("shrubbery creation", "home");
+        delete (f1);
+        AForm *f2 = someIntern.makeForm("robotomy request", "Bender");
+        delete (f2);
+        AForm *f3 = someIntern.makeForm("presidential pardon", "Arthur Dent");
+        delete (f3);
+        AForm *bad = someIntern.makeForm("unknown", "target"); // should return NULL
+        delete (bad);
         intern.signForm(shrub2);  // Will fail
         intern.executeForm(shrub2);  // Will fail
     }

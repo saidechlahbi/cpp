@@ -1,10 +1,7 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
-
-int main()
+int main() 
 {
     try 
     {
@@ -30,6 +27,4 @@ int main()
     {
         std::cerr << "Caught exception: " << e.what() << std::endl;
     }
-
-    return 0;
 }
