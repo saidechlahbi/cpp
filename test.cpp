@@ -21,15 +21,6 @@ class boo
 
 int main ()
 {
-//   void (boo::*fff)(void);
-//   fff = &boo::func;
-//   boo a;
-//   a.func();
-// //  ( a.*fff)();
-// char *s = NULL;
-// long a = strtod("-inff", &s);
-// std::cout << std::numeric_limits<int>::max()  <<  std::endl;
-double aa = 110.4;
-std::cout  << std::setprecision(4) << static_cast<float>(aa) << std::endl;
-
+  float a = 42.02;
+  std::cout << "helllo" <<  a << std::endl;
 }
