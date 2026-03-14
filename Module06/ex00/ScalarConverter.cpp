@@ -21,7 +21,7 @@ void ScalarConverter::convert(std::string input)
     char *iterater;
     iterater = NULL;
     double value = strtod(input.c_str(), &iterater);
-    if (iterater[0] == '\0' || (iterater[0] == 'f' && iterater[1] == '\0'))
+    if (iterater[0] == '\0' ||( (iterater[0] == 'f' && iterater[1] == '\0') && (input.find(".") != std::string::npos)))
     {
         if ( value <= 31  ||  value >= 127)
             std::cout << "char: Non displayable" << std::endl;
