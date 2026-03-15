@@ -3,6 +3,7 @@
 
 #include <exception>
 #include <iostream>
+#include <cstdlib>
 template <typename T>
 class Array
 {
@@ -21,7 +22,7 @@ class Array
         T const& operator[](size_t i) const;
         class OutOfBounds: public std::exception{
             public:
-                virtual const char *what() const throw();
+                const char *what() const throw();
         };
 };
 #include "Array.tpp"

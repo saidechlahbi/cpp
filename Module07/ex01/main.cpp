@@ -5,6 +5,12 @@ void printElement(T const& x)
 {
     std::cout << x << "\t";
 }
+template <typename T>
+void printElement(T & x)
+{
+    x += 1;
+    std::cout << x << "\t";
+}
 
 int main()
 {
