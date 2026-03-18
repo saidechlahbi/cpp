@@ -1,6 +1,7 @@
 #ifndef Span_hpp
 #define Span_hpp
-
+#include <algorithm>
+#include <limits>
 #include <exception>
 #include <iostream> 
 #include <vector>

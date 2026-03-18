@@ -8,7 +8,7 @@
 #include <iostream>
 #include <exception>
 #include <algorithm>
-class notfound: public std::exception{
+class notfoundException: public std::exception{
     const char* what() const throw()
     {
         return "occurrence not found";
@@ -20,7 +20,7 @@ void easyfind(T &container, int data)
 {
     typename T::iterator it = std::find(container.begin(), container.end(), data);
     if (it == container.end())
-        throw notfound();
+        throw notfoundException();
     std::cout << "The occurrence is found " << std::endl;
 }
 
