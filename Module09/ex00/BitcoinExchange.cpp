@@ -16,12 +16,12 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other) {
 BitcoinExchange::~BitcoinExchange() {}
 
 void BitcoinExchange::trimWhitespace(std::string& str) const {
-    size_t first = str.find_first_not_of(" \t");
+    size_t first = str.find_first_not_of(" \t\r\n");
     if (first == std::string::npos) {
         str.clear();
         return;
     }
-    size_t last = str.find_last_not_of(" \t");
+    size_t last = str.find_last_not_of(" \t\r\n");
     str = str.substr(first, last - first + 1);
 }
 
