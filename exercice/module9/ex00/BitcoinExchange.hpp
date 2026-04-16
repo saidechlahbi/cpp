@@ -12,6 +12,11 @@ class BitcoinExchange
 {
         std::map<std::string, double> _database;
         void _parceAndFill(const std::string &line);
+        bool _check_header(std::string &line);
+
+        bool isValidDate(const std::string& date) const;
+        bool isValidValue(const std::string& valueStr, double& value) const;
+        void _trimWhitespace(std::string& str) const;
     public:
         /*orthodoxe canonical form*/
         BitcoinExchange();
