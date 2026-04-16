@@ -30,8 +30,10 @@ bool BitcoinExchange::isValidDate(const std::string& date) const {
         return false;
     
     for (size_t i = 0; i < 10; ++i) {
-        if (i == 4 || i == 7) continue;
-        if (!isdigit(date[i])) return false;
+        if (i == 4 || i == 7)
+            continue;
+        if (!isdigit(date[i]))
+            return false;
     }
 
     int year = std::atoi(date.substr(0, 4).c_str());
@@ -56,7 +58,8 @@ bool BitcoinExchange::isValidValue(const std::string& valueStr, double& value) c
     char* end;
     value = std::strtod(valueStr.c_str(), &end);
     
-    if (*end != '\0') return false;
+    if (*end != '\0')
+        return false;
     if (value < 0) {
         std::cerr << "Error: not a positive number." << std::endl;
         return false;
@@ -124,7 +127,9 @@ void BitcoinExchange::processInput(const std::string& filename) const {
         std::map<std::string, double>::const_iterator it = _database.upper_bound(date);
         if (it != _database.begin()) {
             --it;
-        } else {
+        }
+        else
+        {
             std::cerr << "Error: date prior to database genesis." << std::endl;
             continue;
         }
