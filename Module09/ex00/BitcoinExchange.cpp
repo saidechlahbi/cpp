@@ -135,7 +135,7 @@ void BitcoinExchange::processInput(const std::string& filename) const {
         if (!isValidValue(valueStr, value)) {
             continue;
         }
-
+you
         std::map<std::string, double>::const_iterator it = _database.upper_bound(date);
         if (it != _database.begin()) {
             --it;
