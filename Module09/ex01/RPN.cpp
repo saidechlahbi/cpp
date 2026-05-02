@@ -29,10 +29,14 @@ void RPN::performOperation(char op) {
     int left = _stack.top();
     _stack.pop();
 
-    if (op == '+') _stack.push(left + right);
-    else if (op == '-') _stack.push(left - right);
-    else if (op == '*') _stack.push(left * right);
-    else if (op == '/') {
+    if (op == '+')  
+        _stack.push(left + right);
+    else if (op == '-') 
+        _stack.push(left - right);
+    else if (op == '*') 
+        _stack.push(left * right);
+    else if (op == '/')
+    {
         if (right == 0)
             throw std::runtime_error("Error");
         _stack.push(left / right);
