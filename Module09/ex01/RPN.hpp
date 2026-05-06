@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 #include <stack>
-#include <stdexcept>
+#include <exception>
 
 class RPN {
 private:

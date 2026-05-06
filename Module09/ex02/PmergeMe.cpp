@@ -47,17 +47,10 @@ void PmergeMe::checkInput(char** argv) {
 
 void PmergeMe::printSequence(const std::string& prefix, const std::vector<int>& seq) const {
     std::cout << prefix;
-    size_t limit;
 
-    if (seq.size() > 5) {
-        limit = 5;
-    } else {
-        limit = seq.size();
-    }
-    for (size_t i = 0; i < limit; ++i) {
+    for (size_t i = 0; i < seq.size(); ++i) {
         std::cout << seq[i] << " ";
     }
-    if (seq.size() > 5) std::cout << "[...]";
     std::cout << std::endl;
 }
 
@@ -71,7 +64,6 @@ std::vector<size_t> PmergeMe::generateJacobsthal(size_t n) {
     jacob.push_back(0);
     jacob.push_back(1);
     
-    // Generate standard Jacobsthal numbers (0, 1, 1, 3, 5, 11, 21...)
     while (true) {
         size_t next = jacob[jacob.size() - 1] + 2 * jacob[jacob.size() - 2];
         jacob.push_back(next);
@@ -79,14 +71,12 @@ std::vector<size_t> PmergeMe::generateJacobsthal(size_t n) {
             break;
     }
 
-    // Build the specific reverse-insertion sequence based on Jacobsthal groups
     size_t last_j = 1;
     for (size_t i = 3; i < jacob.size(); ++i) {
         size_t j = jacob[i];
         if (j > n)
             j = n; // Cap at the maximum size
 
-        // Insert backwards from current Jacobsthal down to the previous one
         for (size_t k = j; k > last_j; --k) {
             sequence.push_back(k - 1); // -1 because index is 0-based
         }
@@ -182,8 +172,10 @@ void PmergeMe::mergeInsertSort(std::deque<int>& arr) {
 
     std::deque< std::pair<int, int> > pairs;
     for (size_t i = 0; i < arr.size(); i += 2) {
-        if (arr[i] > arr[i+1]) pairs.push_back(std::make_pair(arr[i], arr[i+1]));
-        else pairs.push_back(std::make_pair(arr[i+1], arr[i]));
+        if (arr[i] > arr[i+1])
+            pairs.push_back(std::make_pair(arr[i], arr[i+1]));
+        else 
+            pairs.push_back(std::make_pair(arr[i+1], arr[i]));
     }
 
     std::deque<int> mainChain;
@@ -208,7 +200,8 @@ void PmergeMe::mergeInsertSort(std::deque<int>& arr) {
     
     for (size_t i = 0; i < jacobSeq.size(); ++i) {
         size_t idx = jacobSeq[i];
-        if (idx == 0) continue;
+        if (idx == 0) 
+            continue;
 
         int value = pendChain[idx];
         std::deque<int>::iterator pos = std::lower_bound(mainChain.begin(), mainChain.end(), value);

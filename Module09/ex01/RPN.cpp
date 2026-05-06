@@ -48,10 +48,9 @@ void RPN::calculate(const std::string& expression) {
         char c = expression[i];
 
         if (c == ' ') {
-            continue; // Skip spaces
+            continue;
         }
         else if (isdigit(c)) {
-            // According to subject, numbers are strictly less than 10 (0-9)
             _stack.push(c - '0');
         }
         else if (isOperator(c)) {
@@ -63,13 +62,11 @@ void RPN::calculate(const std::string& expression) {
             }
         }
         else {
-            // Invalid character
             std::cout << "Error" << std::endl;
             return;
         }
     }
 
-    // At the end, there should be exactly one element in the stack (the result)
     if (_stack.size() == 1) {
         std::cout << _stack.top() << std::endl;
     } else {

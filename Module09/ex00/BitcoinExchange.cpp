@@ -84,7 +84,7 @@ void BitcoinExchange::loadDatabase(const std::string& filename) {
     }
 
     std::string line;
-    std::getline(file, line); // Skip header
+    std::getline(file, line); 
     while (std::getline(file, line)) {
         size_t commaPos = line.find(',');
         if (commaPos != std::string::npos) {
@@ -104,7 +104,7 @@ void BitcoinExchange::processInput(const std::string& filename) const {
     }
 
     std::string line;
-    std::getline(file, line); // Skip header
+    std::getline(file, line); 
 
     while (std::getline(file, line)) {
         size_t pipePos = line.find('|');
